@@ -6,6 +6,7 @@ colorscheme desert
 set tabstop=4
 set incsearch
 set noswapfile
+set nowrap
 
 map <C-h> :tabp<CR>
 map <C-l> :tabn<CR>
