@@ -3,10 +3,20 @@ syntax on
 filetype plugin indent on
 
 colorscheme desert
+if has("gui_win32")
+	set guifont=Lucida_Console:h10:cANSI
+endif
+
 set tabstop=4
+set expandtab
 set incsearch
 set noswapfile
-set nowrap
+set autoindent
+
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
 
 map <C-h> :tabp<CR>
 map <C-l> :tabn<CR>
@@ -20,4 +30,9 @@ map <C-L> <C-W>l<C-W>_
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 
+nmap <Space> zz
+nmap n nzz
+nmap N Nzz
+
 let g:ctrlp_cmd = 'CtrlPCurWD'
+let g:ctrlp_custom_ignore = 'node_modules'
