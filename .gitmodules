@@ -16,3 +16,6 @@
 [submodule "vim/bundle/repmo.vim"]
 	path = vim/bundle/repmo.vim
 	url = https://github.com/vim-scripts/repmo.vim.git
+[submodule "vim/bundle/vim-handlebars"]
+	path = vim/bundle/vim-handlebars
+	url = https://github.com/nono/vim-handlebars.git

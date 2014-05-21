@@ -12,14 +12,14 @@ set expandtab
 set incsearch
 set noswapfile
 set autoindent
+set linebreak
+set backspace=indent,eol,start
 
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
+nmap j gj
+nmap k gk
+vmap j gj
+vmap k gk
 
-map <C-h> :tabp<CR>
-map <C-l> :tabn<CR>
 map <F2> :NERDTreeToggle<CR>
 
 map <C-J> <C-W>j<C-W>_
