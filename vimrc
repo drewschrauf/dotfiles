@@ -22,10 +22,10 @@ vmap k gk
 
 map <F2> :NERDTreeToggle<CR>
 
-map <C-J> <C-W>j<C-W>_
-map <C-K> <C-W>k<C-W>_
-map <C-H> <C-W>h<C-W>_
-map <C-L> <C-W>l<C-W>_
+map <C-J> <C-W>j<C-W>
+map <C-K> <C-W>k<C-W>
+map <C-H> <C-W>h<C-W>
+map <C-L> <C-W>l<C-W>
 
 vmap <Tab> >gv
 vmap <S-Tab> <gv
@@ -36,3 +36,5 @@ nmap N Nzz
 
 let g:ctrlp_cmd = 'CtrlPCurWD'
 let g:ctrlp_custom_ignore = 'node_modules'
+
+let jshint2_save = 1
