@@ -22,10 +22,10 @@ vmap k gk
 
 map <F2> :NERDTreeToggle<CR>
 
-map <C-J> <C-W>j<C-W>
-map <C-K> <C-W>k<C-W>
-map <C-H> <C-W>h<C-W>
-map <C-L> <C-W>l<C-W>
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-H> <C-W>h
+map <C-L> <C-W>l
 
 vmap <Tab> >gv
 vmap <S-Tab> <gv
