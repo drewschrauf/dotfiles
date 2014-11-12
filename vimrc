@@ -20,6 +20,7 @@ nmap k gk
 vmap j gj
 vmap k gk
 
+let NERDTreeIgnore = ['^node_modules$','^dist$']
 map <F2> :NERDTreeToggle<CR>
 
 map <C-J> <C-W>j
@@ -35,6 +36,6 @@ nmap n nzz
 nmap N Nzz
 
 let g:ctrlp_cmd = 'CtrlPCurWD'
-let g:ctrlp_custom_ignore = 'node_modules'
+let g:ctrlp_custom_ignore = 'node_modules\|dist'
 
 let jshint2_save = 1
