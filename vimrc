@@ -23,7 +23,8 @@ vmap j gj
 vmap k gk
 
 let NERDTreeIgnore = ['^node_modules$','^dist$']
-map <F2> :NERDTreeToggle<CR>
+"map <F2> :NERDTreeToggle<CR>
+map <F2> <plug>NERDTreeTabsToggle<CR>
 
 imap jj <Esc>
 
