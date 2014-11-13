@@ -38,6 +38,8 @@ nnoremap <S-l> gt
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 
+set mouse=a
+
 nmap <Space> zz
 nmap n nzz
 nmap N Nzz
