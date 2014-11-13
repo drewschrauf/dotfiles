@@ -2,7 +2,9 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-colorscheme desert
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
 if has("gui_win32")
 	set guifont=Lucida_Console:h10:cANSI
 endif
