@@ -19,6 +19,7 @@ set autoindent
 set linebreak
 set backspace=indent,eol,start
 set number
+set ignorecase
 
 nmap j gj
 nmap k gk
