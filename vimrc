@@ -52,4 +52,8 @@ nmap N Nzz
 let g:ctrlp_cmd = 'CtrlPCurWD'
 let g:ctrlp_custom_ignore = 'node_modules\|dist'
 
+let Grep_Default_Options = '-i'
+let Grep_Default_Filelist = '**/*'
+nnoremap <C-Space> :Grep<cr>
+
 let jshint2_save = 1

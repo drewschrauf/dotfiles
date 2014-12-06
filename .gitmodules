@@ -43,3 +43,6 @@
 [submodule "vim/bundle/nerdcommenter"]
 	path = vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "vim/bundle/grep"]
+	path = vim/bundle/grep
+	url = https://github.com/yegappan/grep
