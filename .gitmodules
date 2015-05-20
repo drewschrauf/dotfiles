@@ -46,3 +46,6 @@
 [submodule "vim/bundle/grep"]
 	path = vim/bundle/grep
 	url = https://github.com/yegappan/grep
+[submodule "vim/bundle/ag.vim"]
+	path = vim/bundle/ag.vim
+	url = https://github.com/rking/ag.vim
