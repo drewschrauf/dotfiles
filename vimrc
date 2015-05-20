@@ -20,6 +20,7 @@ set linebreak
 set backspace=indent,eol,start
 set number
 set ignorecase
+set relativenumber
 
 nmap j gj
 nmap k gk
