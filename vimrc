@@ -57,4 +57,5 @@ let Grep_Default_Options = '-i'
 let Grep_Default_Filelist = '**/*'
 nnoremap <C-Space> :Grep<cr>
 
-let jshint2_save = 1
+"let jshint2_save = 1
+let g:syntastic_javascript_checkers = ['jsxhint']
