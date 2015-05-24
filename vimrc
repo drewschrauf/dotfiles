@@ -59,3 +59,5 @@ nnoremap <C-Space> :Grep<cr>
 
 "let jshint2_save = 1
 let g:syntastic_javascript_checkers = ['jsxhint']
+
+nmap <leader>f :NERDTreeFind<cr>
