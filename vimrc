@@ -27,7 +27,7 @@ nmap k gk
 vmap j gj
 vmap k gk
 
-let NERDTreeIgnore = ['^node_modules$','^dist$']
+let NERDTreeIgnore = ['^node_modules$','^dist$','marko\.js$']
 "map <F2> :NERDTreeToggle<CR>
 map <F2> <plug>NERDTreeTabsToggle<CR>
 
@@ -58,6 +58,6 @@ let Grep_Default_Filelist = '**/*'
 nnoremap <C-Space> :Grep<cr>
 
 "let jshint2_save = 1
-let g:syntastic_javascript_checkers = ['jsxhint']
+"let g:syntastic_javascript_checkers = ['eslint']
 
 nmap <leader>f :NERDTreeFind<cr>
