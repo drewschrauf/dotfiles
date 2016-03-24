@@ -2,9 +2,11 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
+let g:airline_powerline_fonts = 1
+"set background=dark
+"let g:solarized_termcolors=256
+"colorscheme solarized
+colorscheme molokai
 if has("gui_running")
     set guifont=Hack_Regular:h13
 endif
@@ -13,8 +15,8 @@ if has("gui_win32")
 endif
 
 let mapleader=","
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set incsearch
 set noswapfile
@@ -26,6 +28,8 @@ set ignorecase
 set relativenumber
 set autoread
 set noreadonly
+set splitright
+set splitbelow
 
 nmap j gj
 nmap k gk
@@ -66,6 +70,11 @@ set mouse+=a
 if &term =~ '^screen'
     set ttymouse=xterm2
 endif
+
+"enable system clipboard
+noremap <leader>y "*y
+noremap <leader>yy "*Y
+noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
 "recenter editor on space or match
 nmap <Space> zz
