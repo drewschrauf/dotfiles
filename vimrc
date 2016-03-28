@@ -110,3 +110,6 @@ nnoremap \ :Ag<SPACE>
 
 "quick exit
 map Q :qa<CR>
+
+"always wrap in vimdiff
+au VimEnter * if &diff | execute 'windo set wrap' | endif
