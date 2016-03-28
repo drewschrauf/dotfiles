@@ -15,7 +15,8 @@ if has("gui_win32")
 endif
 
 let mapleader=","
-set tabstop=2
+set t_Co=256
+set tabstop=4
 set shiftwidth=2
 set expandtab
 set incsearch
@@ -92,6 +93,7 @@ let Grep_Default_Filelist = '**/*'
 "syntastic settings
 "let jshint2_save = 1
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec = '`npm bin`/eslint'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -105,3 +107,6 @@ nmap <leader>f :NERDTreeFind<cr>
 
 "Ag settings
 nnoremap \ :Ag<SPACE>
+
+"quick exit
+map Q :qa<CR>
