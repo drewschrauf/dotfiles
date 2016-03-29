@@ -113,3 +113,6 @@ map Q :qa<CR>
 
 "always wrap in vimdiff
 au VimEnter * if &diff | execute 'windo set wrap' | endif
+
+"SuperTab cycle down
+let g:SuperTabDefaultCompletionType = '<c-n>'
