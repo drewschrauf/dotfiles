@@ -83,6 +83,9 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias gpp="git status | fpp"
+alias xmm="xmodmap ~/.Xmodmap"
+alias scron="xrandr --output DP1 --auto --left-of eDP1"
+alias scroff="xrandr --output DP1 --off"
 
 ZSH_CACHE_DIR=$HOME/.oh-my-zsh-cache
 if [[ ! -d $ZSH_CACHE_DIR ]]; then

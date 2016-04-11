@@ -14,10 +14,10 @@ if has("gui_win32")
 	set guifont=Lucida_Console:h10:cANSI
 endif
 
-let mapleader=","
+let mapleader=" "
 set t_Co=256
 set tabstop=4
-set shiftwidth=2
+set shiftwidth=4
 set expandtab
 set incsearch
 set noswapfile
@@ -31,13 +31,18 @@ set autoread
 set noreadonly
 set splitright
 set splitbelow
+set cursorline
+set cursorcolumn
+set colorcolumn=80
+highlight CursorColumn ctermbg=0 guibg=lightgrey
+highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 nmap j gj
 nmap k gk
 vmap j gj
 vmap k gk
 
-let NERDTreeIgnore = ['^node_modules$','^dist$','marko\.js$']
+let NERDTreeIgnore = ['^node_modules$','^dist$','marko\.js$', '^coverage']
 "map <F2> :NERDTreeToggle<CR>
 map <F2> <plug>NERDTreeTabsToggle<CR>
 
