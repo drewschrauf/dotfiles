@@ -187,6 +187,7 @@ bar {
   }
 }
 
+exec --no-startup-id compton -b
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id ~/.fehbg
