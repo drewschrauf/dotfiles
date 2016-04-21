@@ -16,8 +16,8 @@ endif
 
 let mapleader=" "
 set t_Co=256
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set incsearch
 set noswapfile
@@ -44,7 +44,8 @@ vmap k gk
 
 let NERDTreeIgnore = ['^node_modules$','^dist$','marko\.js$', '^coverage']
 "map <F2> :NERDTreeToggle<CR>
-map <F2> <plug>NERDTreeTabsToggle<CR>
+"map <F2> <plug>NERDTreeTabsToggle<CR>
+map <leader>n <plug>NERDTreeTabsToggle<CR>
 
 "quickly exit insert mode
 imap jj <Esc>
@@ -121,3 +122,10 @@ au VimEnter * if &diff | execute 'windo set wrap' | endif
 
 "SuperTab cycle down
 let g:SuperTabDefaultCompletionType = '<c-n>'
+
+"Always trim trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
+
+"Better start and end of line
+nmap <leader>i ^
+nmap <leader>a $
