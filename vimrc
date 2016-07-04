@@ -18,6 +18,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-fugitive'
+Plug 'octref/RootIgnore'
 call plug#end()
 
 syntax on
@@ -63,7 +64,8 @@ nmap k gk
 vmap j gj
 vmap k gk
 
-let NERDTreeIgnore = ['^node_modules$','^dist$','marko\.js$', '^coverage']
+"let NERDTreeIgnore = ['^node_modules$','^dist$','marko\.js$', '^coverage']
+let NERDTreeRespectWildIgnore = 1
 "map <F2> :NERDTreeToggle<CR>
 "map <F2> <plug>NERDTreeTabsToggle<CR>
 map <leader>n <plug>NERDTreeTabsToggle<CR>
@@ -111,7 +113,7 @@ nmap N Nzz
 
 "ctrl+P settings
 let g:ctrlp_cmd = 'CtrlPCurWD'
-let g:ctrlp_custom_ignore = 'node_modules\|dist'
+"let g:ctrlp_custom_ignore = 'node_modules\|dist'
 
 let Grep_Default_Options = '-i'
 let Grep_Default_Filelist = '**/*'
