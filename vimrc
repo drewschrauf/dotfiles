@@ -12,13 +12,14 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'https://github.com/rking/ag.vim'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
-Plug 'scrooloose/syntastic'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-fugitive'
 Plug 'octref/RootIgnore'
+Plug 'neomake/neomake'
+Plug 'benjie/neomake-local-eslint.vim'
 call plug#end()
 
 syntax on
@@ -119,18 +120,6 @@ let Grep_Default_Options = '-i'
 let Grep_Default_Filelist = '**/*'
 "nnoremap <C-Space> :Grep<cr>
 
-"syntastic settings
-"let jshint2_save = 1
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exec = '`npm bin`/eslint'
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
 "NERDTree find current budder in tree
 nmap <leader>f :NERDTreeFind<cr>
 
@@ -152,3 +141,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 "Better start and end of line
 nmap <leader>i ^
 nmap <leader>a $
+
+let g:neomake_javascript_enabled_makers = ['eslint']
+autocmd! BufWritePost,BufEnter * Neomake
