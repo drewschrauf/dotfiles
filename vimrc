@@ -1,4 +1,25 @@
-execute pathogen#infect()
+call plug#begin('~/.vim/plugged')
+Plug 'tomasr/molokai'
+Plug 'scrooloose/nerdtree'
+Plug 'https://github.com/kien/ctrlp.vim.git'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'https://github.com/vim-scripts/repmo.vim.git'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'wesQ3/vim-windowswap'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'jiangmiao/auto-pairs'
+Plug 'scrooloose/nerdcommenter'
+Plug 'https://github.com/rking/ag.vim'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'scrooloose/syntastic'
+Plug 'vim-airline/vim-airline'
+Plug 'airblade/vim-gitgutter'
+Plug 'easymotion/vim-easymotion'
+Plug 'ervandew/supertab'
+Plug 'tpope/vim-fugitive'
+call plug#end()
+
 syntax on
 filetype plugin indent on
 
@@ -34,7 +55,7 @@ set splitbelow
 set cursorline
 set cursorcolumn
 set colorcolumn=80
-highlight CursorColumn ctermbg=0 guibg=lightgrey
+"highlight CursorColumn ctermbg=0 guibg=lightgrey
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 nmap j gj
@@ -84,7 +105,7 @@ noremap <leader>yy "*Y
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
 "recenter editor on space or match
-nmap <Space> zz
+"nmap <Space> zz
 nmap n nzz
 nmap N Nzz
 
