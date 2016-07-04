@@ -20,6 +20,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'octref/RootIgnore'
 Plug 'neomake/neomake'
 Plug 'benjie/neomake-local-eslint.vim'
+Plug 'janko-m/vim-test'
 call plug#end()
 
 syntax on
@@ -144,3 +145,12 @@ nmap <leader>a $
 
 let g:neomake_javascript_enabled_makers = ['eslint']
 autocmd! BufWritePost,BufEnter * Neomake
+
+let test#strategy = "neovim"
+let test#javascript#mocha#executable = 'npm run testfile --silent --'
+nmap <leader>t :TestNearest<cr>
+nmap <leader>l :TestLast<cr>
+
+if has('nvim')
+  nmap <BS> <C-W>h
+endif
