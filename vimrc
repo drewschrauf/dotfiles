@@ -22,15 +22,13 @@ Plug 'neomake/neomake'
 Plug 'benjie/neomake-local-eslint.vim'
 Plug 'janko-m/vim-test'
 Plug 'terryma/vim-expand-region'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 syntax on
 filetype plugin indent on
 
 let g:airline_powerline_fonts = 1
-"set background=dark
-"let g:solarized_termcolors=256
-"colorscheme solarized
 colorscheme molokai
 if has("gui_running")
     set guifont=Hack_Regular:h13
@@ -59,7 +57,6 @@ set splitbelow
 set cursorline
 set cursorcolumn
 set colorcolumn=80
-"highlight CursorColumn ctermbg=0 guibg=lightgrey
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 nmap j gj
@@ -67,10 +64,7 @@ nmap k gk
 vmap j gj
 vmap k gk
 
-"let NERDTreeIgnore = ['^node_modules$','^dist$','marko\.js$', '^coverage']
 let NERDTreeRespectWildIgnore = 1
-"map <F2> :NERDTreeToggle<CR>
-"map <F2> <plug>NERDTreeTabsToggle<CR>
 map <leader>n <plug>NERDTreeTabsToggle<CR>
 
 "quickly exit insert mode
@@ -110,17 +104,11 @@ noremap <leader>yy "*Y
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
 "recenter editor on space or match
-"nmap <Space> zz
 nmap n nzz
 nmap N Nzz
 
 "ctrl+P settings
 let g:ctrlp_cmd = 'CtrlPCurWD'
-"let g:ctrlp_custom_ignore = 'node_modules\|dist'
-
-let Grep_Default_Options = '-i'
-let Grep_Default_Filelist = '**/*'
-"nnoremap <C-Space> :Grep<cr>
 
 "NERDTree find current budder in tree
 nmap <leader>f :NERDTreeFind<cr>
@@ -144,17 +132,20 @@ autocmd BufWritePre * :%s/\s\+$//e
 nmap <leader>i ^
 nmap <leader>a $
 
+"Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
 autocmd! BufWritePost,BufEnter * Neomake
-
-let test#strategy = "neovim"
-let test#javascript#mocha#executable = 'npm run testfile --silent --'
-nmap <leader>tn :TestNearest<cr>
-nmap <leader>tl :TestLast<cr>
-
 nmap <leader>lo :lopen<cr>
 nmap <leader>lc :lclose<cr>
 
+"vim-test
+let test#strategy = "neovim"
+let test#javascript#mocha#executable = 'npm run testfile --silent --'
+nmap <leader>tf :TestFile<cr>
+nmap <leader>tn :TestNearest<cr>
+nmap <leader>tl :TestLast<cr>
+
+"Fix issue with ctrl-h not working in neovim
 if has('nvim')
   nmap <BS> <C-W>h
 endif
