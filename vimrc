@@ -21,6 +21,7 @@ Plug 'octref/RootIgnore'
 Plug 'neomake/neomake'
 Plug 'benjie/neomake-local-eslint.vim'
 Plug 'janko-m/vim-test'
+Plug 'terryma/vim-expand-region'
 call plug#end()
 
 syntax on
@@ -125,7 +126,7 @@ let Grep_Default_Filelist = '**/*'
 nmap <leader>f :NERDTreeFind<cr>
 
 "Ag settings
-nnoremap \ :Ag<SPACE>
+nnoremap \ :Ag!<SPACE>
 
 "quick exit
 map Q :qa<CR>
@@ -148,9 +149,15 @@ autocmd! BufWritePost,BufEnter * Neomake
 
 let test#strategy = "neovim"
 let test#javascript#mocha#executable = 'npm run testfile --silent --'
-nmap <leader>t :TestNearest<cr>
-nmap <leader>l :TestLast<cr>
+nmap <leader>tn :TestNearest<cr>
+nmap <leader>tl :TestLast<cr>
+
+nmap <leader>lo :lopen<cr>
+nmap <leader>lc :lclose<cr>
 
 if has('nvim')
   nmap <BS> <C-W>h
 endif
+
+" quick save
+noremap <Leader>s :update<CR>
