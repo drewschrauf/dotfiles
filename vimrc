@@ -1,5 +1,5 @@
 call plug#begin('~/.vim/plugged')
-Plug 'tomasr/molokai'
+"Plug 'tomasr/molokai'
 Plug 'scrooloose/nerdtree'
 Plug 'https://github.com/kien/ctrlp.vim.git'
 Plug 'terryma/vim-multiple-cursors'
@@ -23,19 +23,18 @@ Plug 'benjie/neomake-local-eslint.vim'
 Plug 'janko-m/vim-test'
 Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-surround'
+Plug 'w0ng/vim-hybrid'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 syntax on
 filetype plugin indent on
 
+set background=dark
+colorscheme hybrid
+
 let g:airline_powerline_fonts = 1
-colorscheme molokai
-if has("gui_running")
-    set guifont=Hack_Regular:h13
-endif
-if has("gui_win32")
-	set guifont=Lucida_Console:h10:cANSI
-endif
+let g:airline_theme = 'hybrid'
 
 let mapleader=" "
 set t_Co=256
@@ -56,7 +55,7 @@ set splitright
 set splitbelow
 set cursorline
 set cursorcolumn
-set colorcolumn=80
+set colorcolumn=100
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 nmap j gj
@@ -152,3 +151,6 @@ endif
 
 " quick save
 noremap <Leader>s :update<CR>
+
+" comment alignment
+let g:NERDDefaultAlign = 'left'
