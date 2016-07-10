@@ -154,3 +154,8 @@ noremap <Leader>s :update<CR>
 
 " comment alignment
 let g:NERDDefaultAlign = 'left'
+
+" allow jsx syntax in .js files
+let g:jsx_ext_required = 0
+
+tnoremap <Esc> <C-\><C-n>
