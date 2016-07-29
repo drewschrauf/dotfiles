@@ -3,7 +3,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'https://github.com/kien/ctrlp.vim.git'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'https://github.com/vim-scripts/repmo.vim.git'
+"Plug 'https://github.com/vim-scripts/repmo.vim.git'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'wesQ3/vim-windowswap'
 Plug 'jistr/vim-nerdtree-tabs'
@@ -55,9 +55,9 @@ set noreadonly
 set splitright
 set splitbelow
 set cursorline
-set cursorcolumn
+"set cursorcolumn
 set colorcolumn=100
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+"highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 nmap j gj
 nmap k gk
@@ -140,7 +140,7 @@ nmap <leader>lc :lclose<cr>
 
 "vim-test
 let test#strategy = "neovim"
-let test#javascript#mocha#executable = 'npm run testfile --silent --'
+let test#javascript#mocha#executable = 'npm run test --silent --'
 nmap <leader>tf :TestFile<cr>
 nmap <leader>tn :TestNearest<cr>
 nmap <leader>tl :TestLast<cr>
@@ -152,6 +152,7 @@ endif
 
 " quick save
 noremap <Leader>s :update<CR>
+noremap <Leader>q :q<CR>
 
 " comment alignment
 let g:NERDDefaultAlign = 'left'
