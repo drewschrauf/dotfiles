@@ -26,6 +26,7 @@ Plug 'tpope/vim-surround'
 Plug 'w0ng/vim-hybrid'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'MattesGroeger/vim-bookmarks'
+Plug 'https://github.com/edkolev/tmuxline.vim.git'
 call plug#end()
 
 syntax on
