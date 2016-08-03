@@ -145,6 +145,7 @@ let test#javascript#mocha#executable = 'npm run test --silent --'
 nmap <leader>tf :TestFile<cr>
 nmap <leader>tn :TestNearest<cr>
 nmap <leader>tl :TestLast<cr>
+nmap <leader>ts :TestSuite<cr>
 
 "Fix issue with ctrl-h not working in neovim
 if has('nvim')
@@ -161,7 +162,11 @@ let g:NERDDefaultAlign = 'left'
 " allow jsx syntax in .js files
 let g:jsx_ext_required = 0
 
+" exit terminal in neovim
 tnoremap <Esc> <C-\><C-n>
+
+" detect marko syntax
+au BufRead,BufNewFile *.marko setfiletype html
 
 " Bookmark saving
 let g:bookmark_save_per_working_dir = 1
