@@ -8,6 +8,7 @@ antigen bundle git
 antigen bundle npm
 antigen bundle wd
 antigen bundle command-not-found
+antigen bundle psprint/history-search-multi-word
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
