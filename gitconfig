@@ -1,0 +1,14 @@
+[user]
+  email = andrew.schrauf@gmail.com
+  name = Drew Schrauf
+[push]
+  default = simple
+[difftool]
+  prompt = false
+[diff]
+  tool = nvimdiff
+[difftool "nvimdiff"]
+  cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+[alias]
+  dt = difftool
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
