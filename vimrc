@@ -28,6 +28,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'https://github.com/edkolev/tmuxline.vim.git'
 Plug 'Yggdroot/indentLine'
+Plug 'elixir-lang/vim-elixir'
 call plug#end()
 
 syntax on
@@ -159,6 +160,7 @@ noremap <Leader>q :q<CR>
 
 " comment alignment
 let g:NERDDefaultAlign = 'left'
+let g:NERDSpaceDelims = 1
 
 " allow jsx syntax in .js files
 let g:jsx_ext_required = 0
