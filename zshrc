@@ -10,7 +10,6 @@ antigen bundle wd
 antigen bundle sudo
 antigen bundle docker
 antigen bundle command-not-found
-antigen bundle psprint/history-search-multi-word
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
