@@ -27,6 +27,7 @@ Plug 'w0ng/vim-hybrid'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'https://github.com/edkolev/tmuxline.vim.git'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 syntax on
@@ -167,6 +168,9 @@ tnoremap <Esc> <C-\><C-n>
 
 " detect marko syntax
 au BufRead,BufNewFile *.marko setfiletype html
+
+" No indent markers by default
+let g:indentLine_enabled = 0
 
 " Bookmark saving
 let g:bookmark_save_per_working_dir = 1

@@ -8,7 +8,6 @@ antigen bundle git
 antigen bundle npm
 antigen bundle wd
 antigen bundle command-not-found
-antigen bundle psprint/history-search-multi-word
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -22,3 +21,5 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Tell antigen that you're done.
 antigen apply
 
+export FZF_TMUX=0
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
