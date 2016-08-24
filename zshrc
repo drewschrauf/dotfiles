@@ -30,3 +30,7 @@ export NVM_DIR="/home/drew/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 alias gpp='git status | fpp'
+
+[ -f ~/.todo/todo_completion ] && source ~/.todo/todo_completion
+alias t='~/.todo/todo.sh'
+alias te='nvim ~/.todo/todo.txt'

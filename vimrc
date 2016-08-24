@@ -29,6 +29,7 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'https://github.com/edkolev/tmuxline.vim.git'
 Plug 'Yggdroot/indentLine'
 Plug 'elixir-lang/vim-elixir'
+Plug 'freitass/todo.txt-vim'
 call plug#end()
 
 syntax on
