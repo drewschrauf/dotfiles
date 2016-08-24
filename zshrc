@@ -30,6 +30,7 @@ export NVM_DIR="/home/drew/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 alias gpp='git status | fpp'
+alias title='export DISABLE_AUTO_TITLE=true && title'
 
 [ -f ~/.todo/todo_completion ] && source ~/.todo/todo_completion
 alias t='~/.todo/todo.sh'
