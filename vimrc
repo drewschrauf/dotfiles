@@ -1,9 +1,7 @@
 call plug#begin('~/.vim/plugged')
-"Plug 'tomasr/molokai'
 Plug 'scrooloose/nerdtree'
 Plug 'https://github.com/kien/ctrlp.vim.git'
 Plug 'terryma/vim-multiple-cursors'
-"Plug 'https://github.com/vim-scripts/repmo.vim.git'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'wesQ3/vim-windowswap'
 Plug 'jistr/vim-nerdtree-tabs'
@@ -15,7 +13,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
-Plug 'ervandew/supertab'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-fugitive'
 Plug 'octref/RootIgnore'
 Plug 'neomake/neomake'
@@ -27,6 +25,7 @@ Plug 'w0ng/vim-hybrid'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'https://github.com/edkolev/tmuxline.vim.git'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'Yggdroot/indentLine'
 Plug 'elixir-lang/vim-elixir'
 Plug 'freitass/todo.txt-vim'
@@ -47,7 +46,6 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set incsearch
-set noswapfile
 set autoindent
 set linebreak
 set backspace=indent,eol,start
@@ -62,6 +60,12 @@ set cursorline
 "set cursorcolumn
 set colorcolumn=100
 "highlight ColorColumn ctermbg=0 guibg=lightgrey
+set backup
+set history=1000
+set backupdir=$HOME/.vim-backup
+set undodir=$HOME/.vim-undo
+set viewdir=$HOME/.vim-views
+set directory=$HOME/.vim-swap
 
 nmap j gj
 nmap k gk
@@ -103,9 +107,20 @@ if &term =~ '^screen'
 endif
 
 "enable system clipboard
-noremap <leader>y "*y
-noremap <leader>yy "*Y
-noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+if has('clipboard')
+  if has('unnamedplus')  " When possible use + register for copy-paste
+    set clipboard=unnamed,unnamedplus
+  else         " On mac and Windows, use * register for copy-paste
+    set clipboard=unnamed
+  endif
+endif
+
+" Set forever-undo
+if has('persistent_undo')
+  set undofile
+  set undolevels=1000
+  set undoreload=10000
+endif
 
 "recenter editor on space or match
 nmap n nzz
@@ -128,6 +143,9 @@ au VimEnter * if &diff | execute 'windo set wrap' | endif
 
 "SuperTab cycle down
 let g:SuperTabDefaultCompletionType = '<c-n>'
+
+" Enable deoplete
+let g:deoplete#enable_at_startup = 1
 
 "Always trim trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
