@@ -11,7 +11,7 @@ Plug 'https://github.com/rking/ag.vim'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'vim-airline/vim-airline'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-fugitive'
@@ -29,6 +29,9 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'Yggdroot/indentLine'
 Plug 'elixir-lang/vim-elixir'
 Plug 'freitass/todo.txt-vim'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'Quramy/tsuquyomi'
+Plug 'https://github.com/HerringtonDarkholme/yats.vim'
 call plug#end()
 
 syntax on
@@ -156,6 +159,7 @@ nmap <leader>a $
 
 "Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_typescript_enabled_makers = ['tslint']
 autocmd! BufWritePost,BufEnter * Neomake
 nmap <leader>lo :lopen<cr>
 nmap <leader>lc :lclose<cr>
