@@ -113,7 +113,8 @@ endif
 if has('clipboard')
   if has("unix")
     if system('uname')!~'Darwin'
-      set clipboard=unnamed,unnamedplus
+      "set clipboard=unnamed,unnamedplus
+      "Do nothing on linux
     endif
   else         " On mac and Windows, use * register for copy-paste
     set clipboard=unnamed
