@@ -1,37 +1,50 @@
 call plug#begin('~/.vim/plugged')
+"Theme
+Plug 'w0ng/vim-hybrid'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+"Environment
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
 Plug 'https://github.com/kien/ctrlp.vim.git'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'wesQ3/vim-windowswap'
-Plug 'jistr/vim-nerdtree-tabs'
-Plug 'jiangmiao/auto-pairs'
-Plug 'scrooloose/nerdcommenter'
 Plug 'https://github.com/rking/ag.vim'
-Plug 'mxw/vim-jsx'
-Plug 'pangloss/vim-javascript'
-Plug 'vim-airline/vim-airline'
-" Plug 'airblade/vim-gitgutter'
-Plug 'easymotion/vim-easymotion'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'octref/RootIgnore'
 Plug 'neomake/neomake'
-Plug 'benjie/neomake-local-eslint.vim'
 Plug 'janko-m/vim-test'
-Plug 'terryma/vim-expand-region'
-Plug 'tpope/vim-surround'
-Plug 'w0ng/vim-hybrid'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'https://github.com/edkolev/tmuxline.vim.git'
 Plug 'christoomey/vim-tmux-navigator'
+
+"Editing
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'terryma/vim-multiple-cursors'
+Plug 'jiangmiao/auto-pairs'
+Plug 'scrooloose/nerdcommenter'
+Plug 'easymotion/vim-easymotion'
+Plug 'terryma/vim-expand-region'
+Plug 'tpope/vim-surround'
 Plug 'Yggdroot/indentLine'
-Plug 'elixir-lang/vim-elixir'
-Plug 'freitass/todo.txt-vim'
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'Quramy/tsuquyomi'
+
+"Javascript
+Plug 'benjie/neomake-local-eslint.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+
+"Typescript
 Plug 'https://github.com/HerringtonDarkholme/yats.vim'
+Plug 'Quramy/tsuquyomi'
+Plug 'mhartington/deoplete-typescript'
+
+"Go
+Plug 'fatih/vim-go'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+
 call plug#end()
 
 syntax on
@@ -91,14 +104,6 @@ map <C-L> <C-W>l
 nnoremap <S-h> gT
 nnoremap <S-l> gt
 
-"move line up or down with alt
-nnoremap ∆ :m .+1<CR>==
-nnoremap ˚ :m .-2<CR>==
-inoremap ∆ <Esc>:m .+1<CR>==gi
-inoremap ˚ <Esc>:m .-2<CR>==gi
-vnoremap ∆ :m '>+1<CR>gv=gv
-vnoremap ˚ :m '<-2<CR>gv=gv
-
 "tab and shift tab to move blocks
 vmap <Tab> >gv
 vmap <S-Tab> <gv
@@ -128,7 +133,7 @@ if has('persistent_undo')
   set undoreload=10000
 endif
 
-"recenter editor on space or match
+"recenter editor on match
 nmap n nzz
 nmap N Nzz
 
@@ -146,9 +151,6 @@ map Q :qa<CR>
 
 "always wrap in vimdiff
 au VimEnter * if &diff | execute 'windo set wrap' | endif
-
-"SuperTab cycle down
-let g:SuperTabDefaultCompletionType = '<c-n>'
 
 " Enable deoplete
 let g:deoplete#enable_at_startup = 1
