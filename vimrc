@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
+
 "Theme
-Plug 'w0ng/vim-hybrid'
+Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -8,6 +9,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'https://github.com/kien/ctrlp.vim.git'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'wesQ3/vim-windowswap'
@@ -35,6 +37,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'benjie/neomake-local-eslint.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'steelsojka/deoplete-flow'
 
 "Typescript
 Plug 'https://github.com/HerringtonDarkholme/yats.vim'
@@ -45,13 +48,16 @@ Plug 'mhartington/deoplete-typescript'
 Plug 'fatih/vim-go'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 
+"Templating
+Plug 'mustache/vim-mustache-handlebars'
+
 call plug#end()
 
 syntax on
 filetype plugin indent on
 
 set background=dark
-colorscheme hybrid
+colorscheme hybrid_material
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'hybrid'
@@ -163,7 +169,8 @@ nmap <leader>i ^
 nmap <leader>a $
 
 "Neomake
-let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
+let g:neomake_jsx_enabled_makers = ['eslint', 'flow']
 let g:neomake_typescript_enabled_makers = ['tslint']
 autocmd! BufWritePost,BufEnter * Neomake
 nmap <leader>lo :lopen<cr>
@@ -201,6 +208,22 @@ au BufRead,BufNewFile *.marko setfiletype html
 
 " No indent markers by default
 let g:indentLine_enabled = 0
+
+" Easymotion
+let g:EasyMotion_smartcase = 1
+nmap s <Plug>(easymotion-overwin-f2)
+
+" flow
+function! StrTrim(txt)
+  return substitute(a:txt, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
+endfunction
+
+let g:flow_path = StrTrim(system('PATH=$(npm bin):$PATH && which flow'))
+
+if g:flow_path != 'flow not found'
+  let g:deoplete#sources#flow#flow_bin = g:flow_path
+endif
+let g:neomake_javascript_flow_exe = g:flow_path
 
 " Bookmark saving
 let g:bookmark_save_per_working_dir = 1
