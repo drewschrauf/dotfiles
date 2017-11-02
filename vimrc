@@ -19,7 +19,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'octref/RootIgnore'
 Plug 'neomake/neomake'
 Plug 'janko-m/vim-test'
-Plug 'MattesGroeger/vim-bookmarks'
 Plug 'https://github.com/edkolev/tmuxline.vim.git'
 Plug 'christoomey/vim-tmux-navigator'
 
@@ -33,23 +32,18 @@ Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-surround'
 Plug 'Yggdroot/indentLine'
 
+"Languages
+Plug 'sheerun/vim-polyglot'
+
 "Javascript
 Plug 'benjie/neomake-local-eslint.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'steelsojka/deoplete-flow'
 
 "Typescript
-Plug 'https://github.com/HerringtonDarkholme/yats.vim'
 Plug 'Quramy/tsuquyomi'
 Plug 'mhartington/deoplete-typescript'
 
 "Go
-Plug 'fatih/vim-go'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
-
-"Templating
-Plug 'mustache/vim-mustache-handlebars'
 
 call plug#end()
 
@@ -213,43 +207,3 @@ let g:indentLine_enabled = 0
 let g:EasyMotion_smartcase = 1
 nmap s <Plug>(easymotion-overwin-f2)
 
-" flow
-function! StrTrim(txt)
-  return substitute(a:txt, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
-endfunction
-
-let g:flow_path = StrTrim(system('PATH=$(npm bin):$PATH && which flow'))
-
-if g:flow_path != 'flow not found'
-  let g:deoplete#sources#flow#flow_bin = g:flow_path
-endif
-let g:neomake_javascript_flow_exe = g:flow_path
-
-" Bookmark saving
-let g:bookmark_save_per_working_dir = 1
-let g:bookmark_auto_save = 1
-let g:bookmark_no_default_key_mappings = 1
-function! BookmarkMapKeys()
-    nmap mm :BookmarkToggle<CR>
-    nmap mi :BookmarkAnnotate<CR>
-    nmap mn :BookmarkNext<CR>
-    nmap mp :BookmarkPrev<CR>
-    nmap ma :BookmarkShowAll<CR>
-    nmap mc :BookmarkClear<CR>
-    nmap mx :BookmarkClearAll<CR>
-    nmap mkk :BookmarkMoveUp
-    nmap mjj :BookmarkMoveDown
-endfunction
-function! BookmarkUnmapKeys()
-    unmap mm
-    unmap mi
-    unmap mn
-    unmap mp
-    unmap ma
-    unmap mc
-    unmap mx
-    unmap mkk
-    unmap mjj
-endfunction
-autocmd BufEnter * :call BookmarkMapKeys()
-autocmd BufEnter NERD_tree_* :call BookmarkUnmapKeys()
