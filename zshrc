@@ -34,7 +34,7 @@ BULLETTRAIN_NVM_FG=black
 antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 
 # Setup autosuggestions
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+[ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Tell antigen that you're done.
 antigen apply
@@ -51,3 +51,5 @@ alias title='export DISABLE_AUTO_TITLE=true && title'
 [ -f ~/.todo/todo_completion ] && source ~/.todo/todo_completion
 alias t='~/.todo/todo.sh'
 alias te='nvim ~/.todo/todo.txt'
+
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
