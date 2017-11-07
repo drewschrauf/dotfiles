@@ -35,6 +35,9 @@ Plug 'Yggdroot/indentLine'
 "Languages
 Plug 'sheerun/vim-polyglot'
 
+"Go
+Plug 'fatih/vim-go'
+
 "Javascript
 Plug 'benjie/neomake-local-eslint.vim'
 
@@ -58,6 +61,8 @@ let g:airline_theme = 'hybrid'
 
 let mapleader=" "
 set t_Co=256
+set encoding=utf-8
+scriptencoding utf-8
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -90,6 +95,9 @@ vmap k gk
 
 let NERDTreeRespectWildIgnore = 1
 map <leader>n <plug>NERDTreeTabsToggle<CR>
+let g:NERDTreeDirArrowExpandable="+"
+let g:NERDTreeDirArrowCollapsible="~"
+
 
 "quickly exit insert mode
 imap jj <Esc>
@@ -166,6 +174,7 @@ nmap <leader>a $
 let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
 let g:neomake_jsx_enabled_makers = ['eslint', 'flow']
 let g:neomake_typescript_enabled_makers = ['tslint']
+let g:neomake_go_enabled_makers = ['golint', 'govet']
 autocmd! BufWritePost,BufEnter * Neomake
 nmap <leader>lo :lopen<cr>
 nmap <leader>lc :lclose<cr>
