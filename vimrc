@@ -6,9 +6,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 "Environment
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'https://github.com/kien/ctrlp.vim.git'
 Plug 'editorconfig/editorconfig-vim'
@@ -18,9 +16,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'octref/RootIgnore'
 Plug 'neomake/neomake'
-Plug 'janko-m/vim-test'
 Plug 'https://github.com/edkolev/tmuxline.vim.git'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'vim-scripts/BufOnly.vim'
 
 "Editing
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -37,16 +35,17 @@ Plug 'sheerun/vim-polyglot'
 
 "Go
 Plug 'fatih/vim-go'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 "Javascript
 Plug 'benjie/neomake-local-eslint.vim'
 
 "Typescript
 Plug 'Quramy/tsuquyomi'
-Plug 'mhartington/deoplete-typescript'
+Plug 'mhartington/nvim-typescript'
 
-"Go
-Plug 'zchee/deoplete-go', { 'do': 'make'}
+"Jsonnet
+Plug 'google/vim-jsonnet'
 
 call plug#end()
 
@@ -58,6 +57,7 @@ colorscheme hybrid_material
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'hybrid'
+let g:airline#extensions#tabline#enabled = 1
 
 let mapleader=" "
 set t_Co=256
@@ -78,9 +78,9 @@ set noreadonly
 set splitright
 set splitbelow
 set cursorline
-"set cursorcolumn
 set colorcolumn=100
-"highlight ColorColumn ctermbg=0 guibg=lightgrey
+set foldmethod=indent
+set nofoldenable
 set backup
 set history=1000
 set backupdir=$HOME/.vim-backup
@@ -93,8 +93,11 @@ nmap k gk
 vmap j gj
 vmap k gk
 
+set wildignore+=node_modules
+set wildignore+=__pycache__
+
 let NERDTreeRespectWildIgnore = 1
-map <leader>n <plug>NERDTreeTabsToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
 
@@ -108,9 +111,9 @@ map <C-K> <C-W>k
 map <C-H> <C-W>h
 map <C-L> <C-W>l
 
-"change tabs
-nnoremap <S-h> gT
-nnoremap <S-l> gt
+"change buffers
+nnoremap <S-h> :bprevious<CR>
+nnoremap <S-l> :bnext<CR>
 
 "tab and shift tab to move blocks
 vmap <Tab> >gv
@@ -134,6 +137,13 @@ if has('clipboard')
   endif
 endif
 
+" Figure out the system Python for Neovim.
+if exists("$VIRTUAL_ENV")
+  let g:python3_host_prog=substitute(system("which -a python3 | head -n2 | tail -n1"), "\n", '', 'g')
+else
+  let g:python3_host_prog=substitute(system("which python3"), "\n", '', 'g')
+endif
+
 " Set forever-undo
 if has('persistent_undo')
   set undofile
@@ -144,6 +154,12 @@ endif
 "recenter editor on match
 nmap n nzz
 nmap N Nzz
+
+"recenter editor on scroll
+nmap <C-D> <C-D>zz
+nmap <C-U> <C-U>zz
+nmap <C-F> <C-F>zz
+nmap <C-B> <C-B>zz
 
 "ctrl+P settings
 let g:ctrlp_cmd = 'CtrlPCurWD'
@@ -178,14 +194,6 @@ let g:neomake_go_enabled_makers = ['golint', 'govet']
 autocmd! BufWritePost,BufEnter * Neomake
 nmap <leader>lo :lopen<cr>
 nmap <leader>lc :lclose<cr>
-
-"vim-test
-let test#strategy = "neovim"
-let test#javascript#mocha#executable = 'npm run test --silent --'
-nmap <leader>tf :TestFile<cr>
-nmap <leader>tn :TestNearest<cr>
-nmap <leader>tl :TestLast<cr>
-nmap <leader>ts :TestSuite<cr>
 
 "Fix issue with ctrl-h not working in neovim
 if has('nvim')
