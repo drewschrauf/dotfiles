@@ -41,8 +41,10 @@ Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'benjie/neomake-local-eslint.vim'
 
 "Typescript
+Plug 'Shougo/vimproc.vim'
 Plug 'Quramy/tsuquyomi'
 Plug 'mhartington/nvim-typescript'
+Plug 'drewschrauf/neomake-local-tslint.vim'
 
 "Jsonnet
 Plug 'google/vim-jsonnet'
@@ -238,3 +240,6 @@ function! Multiple_cursors_after()
 	  let g:deoplete#disable_auto_complete = 0
   endif
 endfunction
+
+" Tyupescript settings
+autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
