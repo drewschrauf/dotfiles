@@ -110,8 +110,8 @@ map <C-H> <C-W>h
 map <C-L> <C-W>l
 
 "change tabs
-nnoremap <S-h> :tabn<CR>
-nnoremap <S-l> :tabp<CR>
+nnoremap <S-h> :tabp<CR>
+nnoremap <S-l> :tabn<CR>
 
 "tab and shift tab to move blocks
 vmap <Tab> >gv
