@@ -7,6 +7,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 "Environment
 Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'https://github.com/kien/ctrlp.vim.git'
 Plug 'editorconfig/editorconfig-vim'
@@ -14,11 +15,10 @@ Plug 'wesQ3/vim-windowswap'
 Plug 'https://github.com/rking/ag.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'octref/RootIgnore'
 Plug 'neomake/neomake'
 Plug 'https://github.com/edkolev/tmuxline.vim.git'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'vim-scripts/BufOnly.vim'
+Plug 'severin-lemaignan/vim-minimap'
 
 "Editing
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -29,6 +29,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-surround'
 Plug 'Yggdroot/indentLine'
+Plug 'prettier/vim-prettier'
 
 "Languages
 Plug 'sheerun/vim-polyglot'
@@ -81,14 +82,11 @@ set splitright
 set splitbelow
 set cursorline
 set colorcolumn=100
-set foldmethod=indent
-set nofoldenable
-set backup
+set nobackup
+set noswapfile
 set history=1000
-set backupdir=$HOME/.vim-backup
 set undodir=$HOME/.vim-undo
 set viewdir=$HOME/.vim-views
-set directory=$HOME/.vim-swap
 
 nmap j gj
 nmap k gk
@@ -97,12 +95,10 @@ vmap k gk
 
 set wildignore+=node_modules
 set wildignore+=__pycache__
+set wildignore+=build
 
 let NERDTreeRespectWildIgnore = 1
-map <leader>n :NERDTreeToggle<CR>
-let g:NERDTreeDirArrowExpandable="+"
-let g:NERDTreeDirArrowCollapsible="~"
-
+map <leader>n <plug>NERDTreeTabsToggle<CR>
 
 "quickly exit insert mode
 imap jj <Esc>
@@ -113,9 +109,9 @@ map <C-K> <C-W>k
 map <C-H> <C-W>h
 map <C-L> <C-W>l
 
-"change buffers
-nnoremap <S-h> :bprevious<CR>
-nnoremap <S-l> :bnext<CR>
+"change tabs
+nnoremap <S-h> :tabn<CR>
+nnoremap <S-l> :tabp<CR>
 
 "tab and shift tab to move blocks
 vmap <Tab> >gv
@@ -125,18 +121,6 @@ vmap <S-Tab> <gv
 set mouse+=a
 if &term =~ '^screen'
     set ttymouse=xterm2
-endif
-
-"enable system clipboard
-if has('clipboard')
-  if has("unix")
-    if system('uname')!~'Darwin'
-      "set clipboard=unnamed,unnamedplus
-      "Do nothing on linux
-    endif
-  else         " On mac and Windows, use * register for copy-paste
-    set clipboard=unnamed
-  endif
 endif
 
 " Figure out the system Python for Neovim.
@@ -181,16 +165,16 @@ au VimEnter * if &diff | execute 'windo set wrap' | endif
 " Enable deoplete
 let g:deoplete#enable_at_startup = 1
 
-"Always trim trailing whitespace
-autocmd BufWritePre * :%s/\s\+$//e
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
 
 "Better start and end of line
 nmap <leader>i ^
 nmap <leader>a $
 
 "Neomake
-let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
-let g:neomake_jsx_enabled_makers = ['eslint', 'flow']
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_jsx_enabled_makers = ['eslint']
 let g:neomake_typescript_enabled_makers = ['tslint']
 let g:neomake_go_enabled_makers = ['golint', 'govet']
 autocmd! BufWritePost,BufEnter * Neomake
@@ -204,7 +188,6 @@ endif
 
 " quick save
 noremap <Leader>s :update<CR>
-noremap <Leader>q :q<CR>
 
 " comment alignment
 let g:NERDDefaultAlign = 'left'
@@ -215,9 +198,6 @@ let g:jsx_ext_required = 0
 
 " exit terminal in neovim
 tnoremap <Esc> <C-\><C-n>
-
-" detect marko syntax
-au BufRead,BufNewFile *.marko setfiletype html
 
 " No indent markers by default
 let g:indentLine_enabled = 0
@@ -230,16 +210,23 @@ nmap s <Plug>(easymotion-overwin-f2)
 " Called once right before you start selecting multiple cursors
 function! Multiple_cursors_before()
   if exists('g:deoplete#disable_auto_complete')
-	  let g:deoplete#disable_auto_complete = 1
+    let g:deoplete#disable_auto_complete = 1
   endif
 endfunction
 
 " Called once only when the multiple selection is canceled (default <Esc>)
 function! Multiple_cursors_after()
   if exists('g:deoplete#disable_auto_complete')
-	  let g:deoplete#disable_auto_complete = 0
+    let g:deoplete#disable_auto_complete = 0
   endif
 endfunction
 
-" Tyupescript settings
+" Typescript settings
 autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
+let g:tsuquyomi_use_dev_node_module = 2
+let g:tsuquyomi_tsserver_path = substitute(system("npm bin"), '\n\+$', '', '') . "/tsserver"
+
+" misc
+nmap <leader>h :noh<CR>
+nmap <leader>l :IndentLinesToggle<CR>
+
