@@ -8,6 +8,7 @@ Plug 'vim-airline/vim-airline-themes'
 "Environment
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'octref/RootIgnore'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'wesQ3/vim-windowswap'
@@ -17,6 +18,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'w0rp/ale'
 Plug 'https://github.com/edkolev/tmuxline.vim.git'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'benmills/vimux'
 Plug 'severin-lemaignan/vim-minimap'
 
 "Editing
@@ -25,7 +27,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'easymotion/vim-easymotion'
-Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-surround'
 Plug 'Yggdroot/indentLine'
 
@@ -89,10 +90,6 @@ nmap k gk
 vmap j gj
 vmap k gk
 
-set wildignore+=node_modules
-set wildignore+=__pycache__
-set wildignore+=build
-
 let NERDTreeRespectWildIgnore = 1
 map <leader>n :NERDTreeToggle<CR>
 
@@ -104,6 +101,9 @@ map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-H> <C-W>h
 map <C-L> <C-W>l
+
+"vimux
+let g:VimuxOrientation = "h"
 
 "tab and shift tab to move blocks
 vmap <Tab> >gv
