@@ -7,15 +7,14 @@ Plug 'vim-airline/vim-airline-themes'
 
 "Environment
 Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'https://github.com/kien/ctrlp.vim.git'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'wesQ3/vim-windowswap'
 Plug 'https://github.com/rking/ag.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'neomake/neomake'
+Plug 'w0rp/ale'
 Plug 'https://github.com/edkolev/tmuxline.vim.git'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'severin-lemaignan/vim-minimap'
@@ -29,23 +28,19 @@ Plug 'easymotion/vim-easymotion'
 Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-surround'
 Plug 'Yggdroot/indentLine'
-Plug 'prettier/vim-prettier'
 
 "Languages
 Plug 'sheerun/vim-polyglot'
+Plug 'prettier/vim-prettier'
 
 "Go
 Plug 'fatih/vim-go'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 
-"Javascript
-Plug 'benjie/neomake-local-eslint.vim'
-
 "Typescript
-Plug 'Shougo/vimproc.vim'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Quramy/tsuquyomi'
 Plug 'mhartington/nvim-typescript'
-Plug 'drewschrauf/neomake-local-tslint.vim'
 
 "Jsonnet
 Plug 'google/vim-jsonnet'
@@ -61,6 +56,7 @@ colorscheme hybrid_material
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'hybrid'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 
 let mapleader=" "
 set t_Co=256
@@ -98,7 +94,7 @@ set wildignore+=__pycache__
 set wildignore+=build
 
 let NERDTreeRespectWildIgnore = 1
-map <leader>n <plug>NERDTreeTabsToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
 
 "quickly exit insert mode
 imap jj <Esc>
@@ -108,10 +104,6 @@ map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-H> <C-W>h
 map <C-L> <C-W>l
-
-"change tabs
-nnoremap <S-h> :tabp<CR>
-nnoremap <S-l> :tabn<CR>
 
 "tab and shift tab to move blocks
 vmap <Tab> >gv
@@ -147,8 +139,8 @@ nmap <C-U> <C-U>zz
 nmap <C-F> <C-F>zz
 nmap <C-B> <C-B>zz
 
-"ctrl+P settings
-let g:ctrlp_cmd = 'CtrlPCurWD'
+" ctrlp buffers
+nmap <leader>p :CtrlPBuffer<CR>
 
 "NERDTree find current budder in tree
 nmap <leader>f :NERDTreeFind<cr>
@@ -171,15 +163,6 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 "Better start and end of line
 nmap <leader>i ^
 nmap <leader>a $
-
-"Neomake
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_jsx_enabled_makers = ['eslint']
-let g:neomake_typescript_enabled_makers = ['tslint']
-let g:neomake_go_enabled_makers = ['golint', 'govet']
-autocmd! BufWritePost,BufEnter * Neomake
-nmap <leader>lo :lopen<cr>
-nmap <leader>lc :lclose<cr>
 
 "Fix issue with ctrl-h not working in neovim
 if has('nvim')
