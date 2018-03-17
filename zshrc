@@ -39,7 +39,10 @@ antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-
 # Tell antigen that you're done.
 antigen apply
 
+export EDITOR=nvim
+
 export FZF_TMUX=0
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export NVM_DIR="$HOME/.nvm"

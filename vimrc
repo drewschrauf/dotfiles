@@ -9,7 +9,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'octref/RootIgnore'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'wesQ3/vim-windowswap'
 Plug 'https://github.com/rking/ag.vim'
@@ -20,6 +21,7 @@ Plug 'https://github.com/edkolev/tmuxline.vim.git'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
 Plug 'severin-lemaignan/vim-minimap'
+Plug 'qpkorr/vim-bufkill'
 
 "Editing
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -104,6 +106,7 @@ map <C-L> <C-W>l
 
 "vimux
 let g:VimuxOrientation = "h"
+nmap <leader>r :VimuxPromptCommand<CR>
 
 "tab and shift tab to move blocks
 vmap <Tab> >gv
@@ -139,10 +142,11 @@ nmap <C-U> <C-U>zz
 nmap <C-F> <C-F>zz
 nmap <C-B> <C-B>zz
 
-" ctrlp buffers
-nmap <leader>p :CtrlPBuffer<CR>
+"fzf
+nmap <C-P> :Files<CR>
+nmap ; :Buffers<CR>
 
-"NERDTree find current budder in tree
+"NERDTree find current buffer in tree
 nmap <leader>f :NERDTreeFind<cr>
 
 "Ag settings
@@ -170,7 +174,10 @@ if has('nvim')
 endif
 
 " quick save
-noremap <Leader>s :update<CR>
+noremap <leader>s :update<CR>
+
+" quick delete
+nmap <leader>d :BD<CR>
 
 " comment alignment
 let g:NERDDefaultAlign = 'left'
@@ -180,7 +187,7 @@ let g:NERDSpaceDelims = 1
 let g:jsx_ext_required = 0
 
 " exit terminal in neovim
-tnoremap <Esc> <C-\><C-n>
+" tnoremap <Esc> <C-\><C-n>
 
 " No indent markers by default
 let g:indentLine_enabled = 0
