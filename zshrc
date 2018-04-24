@@ -14,30 +14,15 @@ antigen bundle command-not-found
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-# Load the theme.
-BULLETTRAIN_PROMPT_ORDER=(
-  time
-  status
-  custom
-  # context
-  dir
-  perl
-  ruby
-  virtualenv
-  nvm
-  go
-  git
-  hg
-  cmd_exec_time
-)
-BULLETTRAIN_NVM_FG=black
-antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
-
-# Setup autosuggestions
-[ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Pure theme
+antigen bundle mafredri/zsh-async
+antigen bundle sindresorhus/pure
 
 # Tell antigen that you're done.
 antigen apply
+
+# Setup autosuggestions
+[ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export EDITOR=nvim
 
