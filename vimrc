@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 "Theme
-Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -22,6 +22,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
 Plug 'severin-lemaignan/vim-minimap'
 Plug 'qpkorr/vim-bufkill'
+Plug 'blueyed/vim-qf_resize'
 
 "Editing
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -54,7 +55,8 @@ syntax on
 filetype plugin indent on
 
 set background=dark
-colorscheme hybrid_material
+let g:dracula_italic = 0
+colorscheme dracula
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'hybrid'
@@ -86,6 +88,7 @@ set noswapfile
 set history=1000
 set undodir=$HOME/.vim-undo
 set viewdir=$HOME/.vim-views
+set hidden
 
 nmap j gj
 nmap k gk
@@ -105,7 +108,8 @@ map <C-H> <C-W>h
 map <C-L> <C-W>l
 
 "vimux
-let g:VimuxOrientation = "h"
+let g:VimuxOrientation="h"
+let g:VimuxHeight="30"
 nmap <leader>r :VimuxPromptCommand<CR>
 
 "tab and shift tab to move blocks
@@ -160,6 +164,9 @@ au VimEnter * if &diff | execute 'windo set wrap' | endif
 
 " Enable deoplete
 let g:deoplete#enable_at_startup = 1
+
+" Close deoplete preview after complete
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
