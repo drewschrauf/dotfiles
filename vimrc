@@ -26,7 +26,6 @@ Plug 'blueyed/vim-qf_resize'
 
 "Editing
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'terryma/vim-multiple-cursors'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'easymotion/vim-easymotion'
@@ -203,25 +202,13 @@ let g:indentLine_enabled = 0
 let g:EasyMotion_smartcase = 1
 nmap s <Plug>(easymotion-overwin-f2)
 
-" fix multicursors and deplete
-" Called once right before you start selecting multiple cursors
-function! Multiple_cursors_before()
-  if exists('g:deoplete#disable_auto_complete')
-    let g:deoplete#disable_auto_complete = 1
-  endif
-endfunction
-
-" Called once only when the multiple selection is canceled (default <Esc>)
-function! Multiple_cursors_after()
-  if exists('g:deoplete#disable_auto_complete')
-    let g:deoplete#disable_auto_complete = 0
-  endif
-endfunction
-
 " Typescript settings
 autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
 let g:tsuquyomi_use_dev_node_module = 2
 let g:tsuquyomi_tsserver_path = substitute(system("npm bin"), '\n\+$', '', '') . "/tsserver"
+
+" don't move cursor on star search
+nnoremap * :keepjumps normal! mi*`i<CR>
 
 " misc
 nmap <leader>h :noh<CR>
