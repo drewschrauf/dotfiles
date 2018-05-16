@@ -24,6 +24,7 @@ Plug 'benmills/vimux'
 Plug 'severin-lemaignan/vim-minimap'
 Plug 'qpkorr/vim-bufkill'
 Plug 'blueyed/vim-qf_resize'
+Plug 'MattesGroeger/vim-bookmarks'
 
 "Editing
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -45,6 +46,7 @@ Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Quramy/tsuquyomi'
 Plug 'mhartington/nvim-typescript'
+Plug 'https://github.com/HerringtonDarkholme/yats.vim'
 
 "Jsonnet
 Plug 'google/vim-jsonnet'
@@ -204,9 +206,11 @@ let g:EasyMotion_smartcase = 1
 nmap s <Plug>(easymotion-overwin-f2)
 
 " Typescript settings
+let g:polyglot_disabled = ['typescript']
 autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
 let g:tsuquyomi_use_dev_node_module = 2
 let g:tsuquyomi_tsserver_path = substitute(system("npm bin"), '\n\+$', '', '') . "/tsserver"
+nnoremap <leader>tr :TsuRenameSymbol<cr>
 
 " don't move cursor on star search
 nnoremap * :keepjumps normal! mi*`i<CR>
@@ -215,3 +219,10 @@ nnoremap * :keepjumps normal! mi*`i<CR>
 nmap <leader>h :noh<CR>
 nmap <leader>l :IndentLinesToggle<CR>
 
+" Bookmarks
+let g:bookmark_save_per_working_dir = 1
+let g:bookmark_auto_save = 1
+
+" VIMRC editing
+nnoremap <leader>vw :vsplit $MYVIMRC<cr>
+nnoremap <leader>vs :source $MYVIMRC<cr>
