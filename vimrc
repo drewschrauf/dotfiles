@@ -204,10 +204,12 @@ nmap s <Plug>(easymotion-overwin-f2)
 
 " Typescript settings
 let g:polyglot_disabled = ['typescript']
-autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
 let g:tsuquyomi_use_dev_node_module = 2
 let g:tsuquyomi_tsserver_path = substitute(system("npm bin"), '\n\+$', '', '') . "/tsserver"
-nnoremap <leader>tr :TsuRenameSymbol<cr>
+autocmd FileType typescript,typescriptreact nnoremap <buffer> <leader>ti :TSDef<cr>
+autocmd FileType typescript,typescriptreact nnoremap <buffer> <leader>td :TSDoc<cr>
+autocmd FileType typescript,typescriptreact nnoremap <buffer> <leader>tr :TSRefs<cr>
+autocmd FileType typescript,typescriptreact nnoremap <buffer> <leader>tc :TSRename<cr>
 
 " don't move cursor on star search
 nnoremap * :keepjumps normal! mi*`i<CR>
