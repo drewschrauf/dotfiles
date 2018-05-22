@@ -43,10 +43,8 @@ Plug 'fatih/vim-go'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 "Typescript
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'Quramy/tsuquyomi'
-Plug 'mhartington/nvim-typescript'
 Plug 'https://github.com/HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript'
 
 "Jsonnet
 Plug 'google/vim-jsonnet'
@@ -61,7 +59,6 @@ let g:dracula_italic = 0
 colorscheme dracula
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'hybrid'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 
@@ -253,3 +250,21 @@ function! BookmarkUnmapKeys()
 endfunction
 autocmd BufEnter * :call BookmarkMapKeys()
 autocmd BufEnter NERD_tree_* :call BookmarkUnmapKeys()
+
+" ALE custom linters
+" yats detects tsx as typescriptreact so we need to add custom mappings here
+call ale#linter#Define('typescriptreact', {
+\   'name': 'eslint',
+\   'executable_callback': 'ale#handlers#eslint#GetExecutable',
+\   'command_callback': 'ale#handlers#eslint#GetCommand',
+\   'callback': 'ale#handlers#eslint#Handle',
+\})
+
+call ale#linter#Define('typescriptreact', {
+\   'name': 'tsserver',
+\   'lsp': 'tsserver',
+\   'executable_callback': 'ale_linters#typescript#tsserver#GetExecutable',
+\   'command_callback': 'ale_linters#typescript#tsserver#GetExecutable',
+\   'project_root_callback': 'ale_linters#typescript#tsserver#GetProjectRoot',
+\   'language': '',
+\})
