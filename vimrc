@@ -9,7 +9,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'octref/RootIgnore'
-Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
@@ -21,7 +20,6 @@ Plug 'w0rp/ale'
 Plug 'https://github.com/edkolev/tmuxline.vim.git'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
-Plug 'severin-lemaignan/vim-minimap'
 Plug 'qpkorr/vim-bufkill'
 Plug 'blueyed/vim-qf_resize'
 Plug 'MattesGroeger/vim-bookmarks'
@@ -72,12 +70,12 @@ set expandtab
 set incsearch
 set autoindent
 set linebreak
+set breakindent
 set backspace=indent,eol,start
 set number
 set ignorecase
 set relativenumber
 set autoread
-set noreadonly
 set splitright
 set splitbelow
 set cursorline
@@ -191,9 +189,6 @@ let g:NERDSpaceDelims = 1
 
 " allow jsx syntax in .js files
 let g:jsx_ext_required = 0
-
-" exit terminal in neovim
-" tnoremap <Esc> <C-\><C-n>
 
 " No indent markers by default
 let g:indentLine_enabled = 0
