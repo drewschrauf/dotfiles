@@ -13,7 +13,7 @@ Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'wesQ3/vim-windowswap'
-Plug 'https://github.com/rking/ag.vim'
+Plug 'dyng/ctrlsf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'w0rp/ale'
@@ -151,7 +151,7 @@ nmap ; :Buffers<CR>
 nmap <leader>f :NERDTreeFind<cr>
 
 "Ag settings
-nnoremap \ :Ag!<SPACE>
+nnoremap \ :CtrlSF<SPACE>
 
 "quick exit
 map Q :qa<CR>
