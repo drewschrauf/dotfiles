@@ -42,7 +42,7 @@ Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 "Typescript
 Plug 'https://github.com/HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript'
+Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
 
 "Jsonnet
 Plug 'google/vim-jsonnet'
