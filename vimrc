@@ -22,7 +22,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
 Plug 'qpkorr/vim-bufkill'
 Plug 'blueyed/vim-qf_resize'
-Plug 'MattesGroeger/vim-bookmarks'
 
 "Editing
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -213,39 +212,8 @@ nnoremap * :keepjumps normal! mi*`i<CR>
 nmap <leader>h :noh<CR>
 nmap <leader>l :IndentLinesToggle<CR>
 
-" Bookmarks
-let g:bookmark_save_per_working_dir = 1
-let g:bookmark_auto_save = 1
-
 " VIMRC editing
 nnoremap <leader>ve :vsplit $MYVIMRC<cr>
 nnoremap <leader>vs :source $MYVIMRC<cr>
-
-" disable bookmarks when nerdtree becomes active
-let g:bookmark_no_default_key_mappings = 1
-function! BookmarkMapKeys()
-    nmap mm :BookmarkToggle<CR>
-    nmap mi :BookmarkAnnotate<CR>
-    nmap mn :BookmarkNext<CR>
-    nmap mp :BookmarkPrev<CR>
-    nmap ma :BookmarkShowAll<CR>
-    nmap mc :BookmarkClear<CR>
-    nmap mx :BookmarkClearAll<CR>
-    nmap mkk :BookmarkMoveUp
-    nmap mjj :BookmarkMoveDown
-endfunction
-function! BookmarkUnmapKeys()
-    unmap mm
-    unmap mi
-    unmap mn
-    unmap mp
-    unmap ma
-    unmap mc
-    unmap mx
-    unmap mkk
-    unmap mjj
-endfunction
-autocmd BufEnter * :call BookmarkMapKeys()
-autocmd BufEnter NERD_tree_* :call BookmarkUnmapKeys()
 
 let g:ale_linter_aliases = {'typescriptreact': 'typescript'}
