@@ -248,20 +248,4 @@ endfunction
 autocmd BufEnter * :call BookmarkMapKeys()
 autocmd BufEnter NERD_tree_* :call BookmarkUnmapKeys()
 
-" ALE custom linters
-" yats detects tsx as typescriptreact so we need to add custom mappings here
-call ale#linter#Define('typescriptreact', {
-\   'name': 'eslint',
-\   'executable_callback': 'ale#handlers#eslint#GetExecutable',
-\   'command_callback': 'ale#handlers#eslint#GetCommand',
-\   'callback': 'ale#handlers#eslint#Handle',
-\})
-
-call ale#linter#Define('typescriptreact', {
-\   'name': 'tsserver',
-\   'lsp': 'tsserver',
-\   'executable_callback': 'ale_linters#typescript#tsserver#GetExecutable',
-\   'command_callback': 'ale_linters#typescript#tsserver#GetExecutable',
-\   'project_root_callback': 'ale_linters#typescript#tsserver#GetProjectRoot',
-\   'language': '',
-\})
+let g:ale_linter_aliases = {'typescriptreact': 'typescript'}
