@@ -41,4 +41,6 @@ alias title='export DISABLE_AUTO_TITLE=true && title'
 alias t='~/.todo/todo.sh'
 alias te='nvim ~/.todo/todo.txt'
 
+alias ltb="yarn lint && yarn test && yarn build"
+
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local

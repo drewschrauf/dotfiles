@@ -151,6 +151,7 @@ nmap <leader>f :NERDTreeFind<cr>
 
 "Ag settings
 nnoremap \ :CtrlSF<SPACE>
+let g:ctrlsf_position = 'right'
 
 "quick exit
 map Q :qa<CR>
