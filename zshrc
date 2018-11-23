@@ -10,6 +10,7 @@ antigen bundle wd
 antigen bundle sudo
 antigen bundle docker
 antigen bundle command-not-found
+antigen bundle tarruda/zsh-autosuggestions
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -22,7 +23,6 @@ antigen bundle sindresorhus/pure
 antigen apply
 
 # Setup autosuggestions
-[ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=250"
 
 export EDITOR=nvim
@@ -34,12 +34,9 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+# Custom aliases
 alias gpp='git status | fpp'
 alias title='export DISABLE_AUTO_TITLE=true && title'
-
-[ -f ~/.todo/todo_completion ] && source ~/.todo/todo_completion
-alias t='~/.todo/todo.sh'
-alias te='nvim ~/.todo/todo.txt'
 
 alias ltb="yarn lint && yarn test && yarn build"
 
