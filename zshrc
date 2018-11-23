@@ -1,26 +1,41 @@
-source ~/.zsh/antigen/antigen.zsh
+# Start tmux or attach to existing tmux session
+HOSTNAME=$(hostname -s)
+if [[ $TMUX = "" ]]; then
+  # try to reattach sessions
+  tmux ls | grep -vq attached && TMUXARG="attach-session -d"
+  exec eval "tmux -2 $TMUXARG"
+fi
 
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
+source ~/.zplug/init.zsh
 
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-antigen bundle npm
-antigen bundle wd
-antigen bundle sudo
-antigen bundle docker
-antigen bundle command-not-found
-antigen bundle tarruda/zsh-autosuggestions
+# oh-my-zsh
+zplug lib/history, from:oh-my-zsh
+zplug lib/completion, from:oh-my-zsh
+zplug plugins/git, from:oh-my-zsh
+zplug plugins/npm, from:oh-my-zsh
+zplug plugins/yarn, from:oh-my-zsh
+zplug plugins/wd, from:oh-my-zsh
+zplug plugins/sudo, from:oh-my-zsh
+zplug plugins/docker, from:oh-my-zsh
+zplug plugins/command-not-found, from:oh-my-zsh
 
-# Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
+# Other plugins
+zplug zpm-zsh/ls
+zplug MichaelAquilina/zsh-you-should-use
+zplug ael-code/zsh-colored-man-pages
+zplug zsh-users/zsh-autosuggestions
+zplug zsh-users/zsh-syntax-highlighting, defer:2
 
 # Pure theme
-antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
+zplug mafredri/zsh-async
+zplug sindresorhus/pure
 
-# Tell antigen that you're done.
-antigen apply
+if ! zplug check; then
+  zplug install
+fi
+
+# Tell zplug that you're done.
+zplug load
 
 # Setup autosuggestions
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=250"
@@ -36,8 +51,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Custom aliases
 alias gpp='git status | fpp'
-alias title='export DISABLE_AUTO_TITLE=true && title'
-
 alias ltb="yarn lint && yarn test && yarn build"
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
