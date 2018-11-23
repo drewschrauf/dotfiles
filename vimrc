@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 "Theme
-Plug 'tomasr/molokai'
+Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -54,7 +54,7 @@ syntax on
 filetype plugin indent on
 
 set background=dark
-colorscheme molokai
+colorscheme Tomorrow-Night
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
