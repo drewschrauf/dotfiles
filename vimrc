@@ -30,6 +30,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'Yggdroot/indentLine'
+Plug 'nelstrom/vim-visual-star-search'
 
 "Languages
 Plug 'sheerun/vim-polyglot'
