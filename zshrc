@@ -51,6 +51,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # Custom aliases
 alias n='nvim'
+alias cat='bat'
 alias gpp='git status | fpp'
 alias ltb="yarn lint && yarn test && yarn build"
 

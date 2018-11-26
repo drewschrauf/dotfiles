@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 "Theme
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'tomasr/molokai'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -21,6 +21,7 @@ Plug 'https://github.com/edkolev/tmuxline.vim.git'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
 Plug 'qpkorr/vim-bufkill'
+Plug 'Asheq/close-buffers.vim'
 Plug 'blueyed/vim-qf_resize'
 
 "Editing
@@ -53,8 +54,7 @@ syntax on
 filetype plugin indent on
 
 set background=dark
-let g:dracula_italic = 0
-colorscheme dracula
+colorscheme molokai
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -182,7 +182,10 @@ endif
 noremap <leader>s :update<CR>
 
 " quick delete
-nmap <leader>d :BD<CR>
+nmap <leader>d :BD<cr>
+
+"Make current buffer the only buffer
+nmap <leader>o :CloseHiddenBuffers<cr>
 
 " comment alignment
 let g:NERDDefaultAlign = 'left'
