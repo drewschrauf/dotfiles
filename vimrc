@@ -17,13 +17,14 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'w0rp/ale'
-Plug 'https://github.com/edkolev/tmuxline.vim'
+Plug 'edkolev/tmuxline.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
+Plug 'wincent/terminus'
 Plug 'qpkorr/vim-bufkill'
 Plug 'Asheq/close-buffers.vim'
-Plug 'blueyed/vim-qf_resize'
-Plug 'https://github.com/vim-scripts/YankRing.vim'
+" Plug 'blueyed/vim-qf_resize'
+Plug 'vim-scripts/YankRing.vim'
 
 "Editing
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -36,14 +37,14 @@ Plug 'nelstrom/vim-visual-star-search'
 
 "Languages
 Plug 'sheerun/vim-polyglot'
-Plug 'prettier/vim-prettier'
 
 "Go
 Plug 'fatih/vim-go'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 "Typescript
-Plug 'https://github.com/HerringtonDarkholme/yats.vim'
+Plug 'prettier/vim-prettier'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
 
 "Jsonnet
