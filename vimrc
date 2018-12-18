@@ -215,6 +215,9 @@ autocmd FileType typescript,typescriptreact nnoremap <buffer> <leader>tc :TSRena
 " don't move cursor on star search
 nnoremap * :keepjumps normal! mi*`i<CR>
 
+" Fix YankRing bug
+let g:yankring_clipboard_monitor = 0
+
 " misc
 nmap <leader>h :noh<CR>
 nmap <leader>l :IndentLinesToggle<CR>
