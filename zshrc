@@ -53,6 +53,6 @@ export NVM_DIR="$HOME/.nvm"
 alias n='nvim'
 alias cat='bat'
 alias gpp='git status | fpp'
-alias ltb="yarn lint && yarn test && yarn build"
+alias ltb="npm run lint && npm test && npm run build"
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
