@@ -56,6 +56,7 @@ syntax on
 filetype plugin indent on
 
 set background=dark
+let g:dracula_italic = 0
 colorscheme dracula
 
 let g:airline_powerline_fonts = 1
