@@ -17,12 +17,13 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'w0rp/ale'
-Plug 'https://github.com/edkolev/tmuxline.vim.git'
+Plug 'https://github.com/edkolev/tmuxline.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
 Plug 'qpkorr/vim-bufkill'
 Plug 'Asheq/close-buffers.vim'
 Plug 'blueyed/vim-qf_resize'
+Plug 'https://github.com/vim-scripts/YankRing.vim'
 
 "Editing
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -144,7 +145,7 @@ nmap <C-F> <C-F>zz
 nmap <C-B> <C-B>zz
 
 "fzf
-nmap <C-P> :Files<CR>
+nmap <C-T> :Files<CR>
 nmap ; :Buffers<CR>
 
 "NERDTree find current buffer in tree
