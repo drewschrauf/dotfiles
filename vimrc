@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 "Theme
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'junegunn/seoul256.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -23,8 +23,6 @@ Plug 'benmills/vimux'
 Plug 'wincent/terminus'
 Plug 'qpkorr/vim-bufkill'
 Plug 'Asheq/close-buffers.vim'
-" Plug 'blueyed/vim-qf_resize'
-Plug 'vim-scripts/YankRing.vim'
 
 "Editing
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -34,6 +32,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'Yggdroot/indentLine'
 Plug 'nelstrom/vim-visual-star-search'
+Plug 'Shougo/neosnippet.vim'
 
 "Languages
 Plug 'sheerun/vim-polyglot'
@@ -56,9 +55,9 @@ syntax on
 filetype plugin indent on
 
 set background=dark
-let g:dracula_italic = 0
-colorscheme dracula
+colorscheme seoul256
 
+let g:airline_theme='zenburn'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#ale#enabled = 1
@@ -216,8 +215,11 @@ autocmd FileType typescript,typescriptreact nnoremap <buffer> <leader>tc :TSRena
 " don't move cursor on star search
 nnoremap * :keepjumps normal! mi*`i<CR>
 
-" Fix YankRing bug
-let g:yankring_clipboard_monitor = 0
+" Plugin key-mappings.
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
+let g:neosnippet#snippets_directory = "~/Code/dotfiles/snippets"
 
 " misc
 nmap <leader>h :noh<CR>

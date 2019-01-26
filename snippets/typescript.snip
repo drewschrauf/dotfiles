@@ -1,0 +1,18 @@
+snippet it-jest
+abbr it('...', () => {})
+options head
+  it('${1:#:description}', () => {
+    ${0}
+  })
+
+snippet describe-jest
+abbr it('...', () => {})
+options head
+  describe('${1:#:description}', () => {
+    ${0}
+  })
+
+snippet log
+abbr console.log('...')
+options head
+  console.log('${0}')
