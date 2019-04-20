@@ -1,0 +1,16 @@
+set $systemmenu "system:  [l]ock  [e]xit  [b]lank  [s]uspend  [r]eboot  [S]hutdown"
+bindsym $mod+Shift+p mode $systemmenu
+mode $systemmenu {
+  bindsym l exec --no-startup-id "~/.dotfiles/bin/screen-lock", mode "default"
+  bindsym Shift+l exec --no-startup-id "~/.dotfiles/bin/screen-lock && sleep 1; xset dpms force off", mode "default"
+  bindsym b exec --no-startup-id "sleep 1; xset dpms force off", mode "default"
+  bindsym e exec --no-startup-id "i3-msg exit"
+  bindsym s exec --no-startup-id "~/.dotfiles/bin/screen-lock && systemctl suspend", mode "default"
+  bindsym r exec --no-startup-id "systemctl reboot", mode "default"
+  bindsym Shift+s exec --no-startup-id "systemctl poweroff"
+
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym q mode "default"
+}

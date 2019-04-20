@@ -1,0 +1,137 @@
+/*
+ * ROFI color theme
+ *
+ * Based on Base16 Material Color Scheme (https://github.com/ntpeters/base16-materialtheme-scheme)
+ *
+ * User: Tomaszal
+ * Copyright: Tomas Zaluckij
+ */
+
+* {
+  /* Dracula theme */
+  colorForeground:  #F8F8F2;
+  colorBackground:  #282A36;
+  colorBlack:       #1E1F29;
+  colorBlackLight:  #4D4D4D;
+  colorRed:         #FF5555;
+  colorRedLight:    #FF6E67;
+  colorGreen:       #50FA7B;
+  colorGreenLight:  #5AF78E;
+  colorYellow:      #F1FA8C;
+  colorYellowLight: #F4F99D;
+  colorPurple:      #BD93F9;
+  colorPurpleLight: #CAA9FA;
+  colorPink:        #FF79C6;
+  colorPinkLight:   #FF92D0;
+  colorCyan:        #8BE9FD;
+  colorCyanLight:   #9AEDFE;
+  colorGrey:        #BFBFBF;
+  colorGreyLight:   #E6E6E6;
+  colorOrange:      #FFB86C;
+  colorOrangeLight: #ffc17f;
+  colorBlue:        #44475A;
+  colorBlueLight:   #6272A4;
+
+  spacing: 0;
+  background-color: @colorBlack;
+}
+
+window {
+  transparency: "real";
+  /*fullscreen: true;*/
+  background-color: #263238CC; /*base00 + CC (80% opacity)*/
+  width: 900px;
+}
+
+mainbox {
+  children: [inputbar, message, sidebar, listview];
+  spacing: 16px;
+  /*margin: 20%;*/
+  padding: 16px 0;
+  border: 2px;
+  border-color: @colorBlueLight;
+}
+
+inputbar {
+  padding: 0 20px;
+  children: [prompt, textbox-prompt-colon, entry, case-indicator];
+}
+
+prompt {
+  text-color: @colorPink;
+}
+
+textbox-prompt-colon {
+  expand: false;
+  str: ":";
+  margin: 0 1ch 0 0;
+  text-color: @colorPink;
+}
+
+entry {
+  text-color: @colorForeground;
+}
+
+case-indicator {
+  text-color: #ff0000; /* TODO: What is this? */
+}
+
+sidebar, message {
+  border: 1px 0;
+  border-color: #ff0; /* TODO: What is this? */
+}
+
+button, textbox {
+  background-color: @colorBlue;
+  text-color: @colorPink;
+  padding: 5px;
+}
+
+button selected {
+  background-color: @colorBlue;
+}
+
+listview {
+  scrollbar: true;
+  margin: 0 10px 0 30px;
+  margin: 0 20px;
+}
+
+scrollbar {
+  background-color: @colorBlue;
+  handle-color: @colorPink;
+  handle-width: 5px;
+  border: 0 0px;
+  border-color: @colorPink;
+  margin: 0 0 0 20px;
+}
+
+element {
+  padding: 7px 5px;
+  highlight: bold underline;
+}
+
+element normal {
+  background-color: transparent;
+}
+
+element selected {
+  background-color: @colorBlue;
+}
+
+element alternate {
+  /*background-color: @base03;*/
+}
+
+element normal normal, element selected normal, element alternate normal {
+  text-color: @colorForeground;
+}
+
+element normal urgent, element selected urgent, element alternate urgent {
+  text-color: @colorRed;
+}
+
+element normal active, element selected active, element alternate active {
+  text-color: @colorPink;
+}
+

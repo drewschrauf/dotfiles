@@ -1,0 +1,93 @@
+! Text rendering
+! --------------------------
+Xft.rgba: rgb
+Xft.antialias: true
+Xft.autohint: 0
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+! Cursor settings
+! ---------------
+xcursor.size: 16
+
+! Dracula Xresources palette
+! --------------------------
+#define colorForeground  #F8F8F2
+#define colorBackground  #282A36
+#define colorBlack       #1E1F29
+#define colorBlackLight  #4D4D4D
+#define colorRed         #FF5555
+#define colorRedLight    #FF6E67
+#define colorGreen       #50FA7B
+#define colorGreenLight  #5AF78E
+#define colorYellow      #F1FA8C
+#define colorYellowLight #F4F99D
+#define colorPurple      #BD93F9
+#define colorPurpleLight #CAA9FA
+#define colorPink        #FF79C6
+#define colorPinkLight   #FF92D0
+#define colorCyan        #8BE9FD
+#define colorCyanLight   #9AEDFE
+#define colorGrey        #BFBFBF
+#define colorGreyLight   #E6E6E6
+#define colorOrange      #FFB86C
+#define colorOrangeLight #ffc17f
+#define colorBlue        #44475A
+#define colorBlueLight   #6272A4
+
+! Bind to base16
+! --------------------------
+#define foreground colorForeground
+#define background colorBackground
+#define color0     colorBlack
+#define color8     colorBlackLight
+#define color1     colorRed
+#define color9     colorRedLight
+#define color2     colorGreen
+#define color10    colorGreenLight
+#define color3     colorYellow
+#define color11    colorYellowLight
+#define color4     colorPurple
+#define color12    colorPurpleLight
+#define color5     colorPink
+#define color13    colorPinkLight
+#define color6     colorCyan
+#define color14    colorCyanLight
+#define color7     colorGrey
+#define color15    colorGreyLight
+
+*.foreground: foreground
+*.background: background
+
+!black
+*.color0:     color0
+*.color8:     color8
+
+!red
+*.color1:     color1
+*.color9:     color9
+
+!green
+*.color2:     color2
+*.color10:    color10
+
+!yellow
+*.color3:     color3
+*.color11:    color11
+
+!blue
+*.color4:     color4
+*.color12:    color12
+
+!magenta
+*.color5:     color5
+*.color13:    color13
+
+!cyan
+*.color6:     color6
+*.color14:    color14
+
+!white
+*.color7:     color7
+*.color15:    color15

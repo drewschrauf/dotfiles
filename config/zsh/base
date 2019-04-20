@@ -1,10 +1,10 @@
 # Start tmux or attach to existing tmux session
-HOSTNAME=$(hostname -s)
-if [[ $TMUX = "" ]]; then
-  # try to reattach sessions
-  tmux ls | grep -vq attached && TMUXARG="attach-session -d"
-  exec eval "tmux -2 $TMUXARG"
-fi
+#HOSTNAME=$(hostname -s)
+#if [[ $TMUX = "" ]]; then
+#  # try to reattach sessions
+#  tmux ls | grep -vq attached && TMUXARG="attach-session -d"
+#  exec eval "tmux -2 $TMUXARG"
+#fi
 
 source ~/.zplug/init.zsh
 
@@ -51,6 +51,8 @@ export NVM_DIR="$HOME/.nvm"
 
 # Custom aliases
 alias n='nvim'
+alias t='tmux attach || tmux new'
+alias ls='exa'
 alias cat='bat'
 alias gpp='git status | fpp'
 alias ltb="yarn lint && yarn test && yarn build"

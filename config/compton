@@ -1,0 +1,8 @@
+backend = "glx";
+vsync = "opengl-swc";
+unredir-if-possible = true;
+unredir-if-possible-exclude = [ 
+  "class_g ?= 'Code'", 
+  "class_g ?= 'Chromium'", 
+  "class_g ?= 'Firefox'" 
+];

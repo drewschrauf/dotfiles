@@ -1,0 +1,31 @@
+# dracula color theme
+set $colorForeground  #F8F8F2
+set $colorBackground  #282A36
+set $colorBlack       #1E1F29
+set $colorBlackLight  #4D4D4D
+set $colorRed         #FF5555
+set $colorRedLight    #FF6E67
+set $colorGreen       #50FA7B
+set $colorGreenLight  #5AF78E
+set $colorYellow      #F1FA8C
+set $colorYellowLight #F4F99D
+set $colorPurple      #BD93F9
+set $colorPurpleLight #CAA9FA
+set $colorPink        #FF79C6
+set $colorPinkLight   #FF92D0
+set $colorCyan        #8BE9FD
+set $colorCyanLight   #9AEDFE
+set $colorGrey        #BFBFBF
+set $colorGreyLight   #E6E6E6
+set $colorOrange      #FFB86C
+set $colorOrangeLight #ffc17f
+set $colorBlue        #44475A
+set $colorBlueLight   #6272A4
+
+# Gaps border colours
+# class                 border           background       text             indicator        child_border
+client.focused          $colorPurple     $colorPurple     $colorBackground $colorGreen
+client.unfocused        $colorBlueLight  $colorBlueLight  $colorForeground $colorGreen
+client.urgent           $colorRed        $colorRed        $colorBackground $colorGreen
+client.background       $colorBackground
+client.placeholder      $colorBackground $colorBackground $colorForeground $colorBackground $colorBackground

@@ -1,0 +1,14 @@
+# set up trackball
+my_mouse_id=$(xinput | grep "ELECOM" -m 1 | sed 's/^.*id=\([0-9]*\)[ \t].*$/\1/')
+xinput set-button-map $my_mouse_id 1 12 3 4 5 6 7 8 9 10 11 2
+
+[[ -f ~/.nvidia-settings-rc ]] && nvidia-settings --load-config-only
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+
+# disable blanking and enable dpms features, 5 min timeouts
+xset s off
+xset s no blank
+xset dpms 300 300 300
+
+# start i3
+exec i3
