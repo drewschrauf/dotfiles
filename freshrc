@@ -15,9 +15,9 @@ fresh-options --file=~/.config/i3/config --marker
 fresh-options
 
 fresh-options --file=~/.zshrc --marker
+  fresh config/zsh/plugin
   fresh config/zsh/env
   fresh config/zsh/alias
-  fresh config/zsh/plugin
 fresh-options
 
 fresh-options --file=~/.config/nvim/init.vim --marker='"'
