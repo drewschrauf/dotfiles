@@ -1,0 +1,5 @@
+# Media player controls, requires playerctl
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioForward exec playerctl next
+bindsym XF86AudioRewind exec playerctl previous
+

@@ -10,6 +10,7 @@ fresh-options --file=~/.config/i3/config --marker
   fresh config/i3/bar
 
   fresh config/i3/modes/\*
+  fresh config/i3/keybindings/\*
 
   fresh config/i3/startup
 fresh-options

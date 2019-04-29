@@ -1,7 +1,8 @@
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id blueman-applet
 exec_always --no-startup-id pasystray
+exec_always --no-startup-id udiskie -s
 exec_always --no-startup-id compton
 exec_always --no-startup-id redshift
 exec_always --no-startup-id dunst
-exec_always --no-startup-id feh --bg-scale ~/.dotfiles/wallpaper.jpg
+exec_always --no-startup-id feh --bg-scale ~/.dotfiles/wallpaper.png
