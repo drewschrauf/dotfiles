@@ -19,9 +19,14 @@ fresh-options --file=~/.zshrc --marker
   fresh config/zsh/plugin
   fresh config/zsh/env
   fresh config/zsh/alias
+
+  if [[ "$(uname)" == "Linux" ]]; then
+    fresh config/zsh/linux/\*
+  fi
 fresh-options
 
 fresh-options --file=~/.config/nvim/init.vim --marker='"'
+  fresh config/nvim/plugins
   fresh config/nvim/base
 fresh-options
 
