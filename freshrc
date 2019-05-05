@@ -31,6 +31,7 @@ fresh-options --file=~/.config/nvim/init.vim --marker='"'
 fresh-options
 
 fresh config/i3status --file=~/.i3status.conf
+fresh config/polybar --file=~/.config/polybar/config
 fresh config/rofi/config --file=~/.config/rofi/config
 fresh config/rofi/dracula.rasi --file=~/.config/rofi/dracula.rasi
 fresh config/compton --file=~/.config/compton.conf

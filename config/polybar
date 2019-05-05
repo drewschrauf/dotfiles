@@ -1,0 +1,84 @@
+[colors]
+background = #282A36
+background-alt = #4D4D4D
+foreground = #F8F8F2
+primary = #BD93F9
+alert = #FF5555
+
+[bar/primary]
+height = 32
+line-size = 5
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-color = ${colors.primary}
+
+width = 100%
+padding-left = 0
+padding-right = 0
+module-margin = 2
+
+font-0 = "SF Pro Text:style=Bold:pixelsize=10;1"
+
+modules-left = i3
+modules-center = date
+modules-right = cpu memory filesystem
+
+tray-position = right
+tray-padding = 1
+tray-background = ${colors.background}
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+cursor-click = pointer
+
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor
+label-focused-background = ${colors.background-alt}
+label-focused-underline = ${colors.primary}
+label-focused-padding = 2
+
+; unfocused = Inactive workspace on focused monitor
+label-unfocused-padding = 2
+
+; urgent = Workspace with urgency hint set
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+[module/date]
+type = internal/date
+interval = 1
+date = %a %d %b %Y
+time = %k:%M
+label = %date% %time%
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = "CPU "
+label = %percentage%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = "RAM "
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+mount-0 = /
+label-mounted = %mountpoint% %percentage_used%%
+
