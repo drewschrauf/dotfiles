@@ -22,7 +22,7 @@ font-0 = "SF Pro Text:style=Bold:pixelsize=10;1"
 
 modules-left = i3
 modules-center = date
-modules-right = cpu memory filesystem
+modules-right = spotify cpu memory filesystem
 
 tray-position = right
 tray-padding = 1
@@ -43,7 +43,7 @@ wrapping-scroll = false
 ;pin-workspaces = true
 
 label-mode-padding = 2
-label-mode-foreground = #000
+label-mode-foreground = ${colors.background}
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
@@ -61,7 +61,7 @@ label-urgent-padding = 2
 [module/date]
 type = internal/date
 interval = 1
-date = %a %d %b %Y
+date-alt = %a %d %b %Y
 time = %k:%M
 label = %date% %time%
 
@@ -80,5 +80,12 @@ format-prefix = "RAM "
 type = internal/fs
 interval = 25
 mount-0 = /
-label-mounted = %mountpoint% %percentage_used%%
+label-mounted = DISK %percentage_used%%
 
+[module/spotify]
+type = custom/script
+interval = 1
+; format-prefix = ""
+format = <label>
+exec = python ~/.dotfiles/bin/spotify_status.py -f '{artist} - {song}'
+format-underline = #1db954
