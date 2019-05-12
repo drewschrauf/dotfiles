@@ -154,10 +154,10 @@ nmap s <Plug>(easymotion-overwin-f2)
 let g:polyglot_disabled = ['typescript']
 let g:tsuquyomi_use_dev_node_module = 2
 let g:tsuquyomi_tsserver_path = substitute(system("npm bin"), '\n\+$', '', '') . "/tsserver"
-autocmd FileType typescript,typescriptreact nnoremap <buffer> <leader>ti :TSDef<cr>
-autocmd FileType typescript,typescriptreact nnoremap <buffer> <leader>td :TSDoc<cr>
-autocmd FileType typescript,typescriptreact nnoremap <buffer> <leader>tr :TSRefs<cr>
-autocmd FileType typescript,typescriptreact nnoremap <buffer> <leader>tc :TSRename<cr>
+autocmd FileType typescript,typescript.tsx nnoremap <buffer> <leader>ti :TSDef<cr>
+autocmd FileType typescript,typescript.tsx nnoremap <buffer> <leader>td :TSDoc<cr>
+autocmd FileType typescript,typescript.tsx nnoremap <buffer> <leader>tr :TSRefs<cr>
+autocmd FileType typescript,typescript.tsx nnoremap <buffer> <leader>tc :TSRename<cr>
 
 " don't move cursor on star search
 nnoremap * :keepjumps normal! mi*`i<CR>
@@ -176,5 +176,3 @@ nmap <leader>l :IndentLinesToggle<CR>
 " VIMRC editing
 nnoremap <leader>ve :vsplit $MYVIMRC<cr>
 nnoremap <leader>vs :source $MYVIMRC<cr>
-
-let g:ale_linter_aliases = {'typescriptreact': 'typescript'}

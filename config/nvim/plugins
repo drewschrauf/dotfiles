@@ -17,7 +17,7 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'w0rp/ale'
-Plug 'edkolev/tmuxline.vim'
+Plug 'He-Ro/tmuxline.vim', { 'branch': 'fix_for_tmux_2.9' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
 Plug 'wincent/terminus'
