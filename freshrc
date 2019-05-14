@@ -40,7 +40,15 @@ fresh config/dunst --file=~/.config/dunst/dunstrc
 fresh config/ranger --file=~/.config/ranger/rc.conf
 fresh config/redshift --file=~/.config/redshift.conf
 
+fresh config/chunkwm --file=~/.chunkwmrc
+fresh config/skhdrc --file=~/.skhdrc
+
 fresh config/tmux --file=~/.tmux.conf
 fresh config/tmux.colors --file=~/.tmux.colors
 
-fresh config/git --file=~/.gitconfig
+fresh-options --file=~/.gitconfig
+  if [[ -f config/git/user ]]; then
+    fresh config/git/user
+  fi
+  fresh config/git/base
+fresh-options
