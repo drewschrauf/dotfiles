@@ -4,7 +4,7 @@ filetype plugin indent on
 set background=dark
 color dracula
 
-let g:airline_theme='zenburn'
+let g:airline_theme='dracula'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#ale#enabled = 1
@@ -151,9 +151,7 @@ let g:EasyMotion_smartcase = 1
 nmap s <Plug>(easymotion-overwin-f2)
 
 " Typescript settings
-let g:polyglot_disabled = ['typescript']
-let g:tsuquyomi_use_dev_node_module = 2
-let g:tsuquyomi_tsserver_path = substitute(system("npm bin"), '\n\+$', '', '') . "/tsserver"
+let g:polyglot_disabled = ['typescript', 'jsx']
 autocmd FileType typescript,typescript.tsx nnoremap <buffer> <leader>ti :TSDef<cr>
 autocmd FileType typescript,typescript.tsx nnoremap <buffer> <leader>td :TSDoc<cr>
 autocmd FileType typescript,typescript.tsx nnoremap <buffer> <leader>tr :TSRefs<cr>
