@@ -35,6 +35,7 @@ set history=1000
 set undodir=$HOME/.vim-undo
 set viewdir=$HOME/.vim-views
 set hidden
+set inccommand=nosplit
 
 nmap j gj
 nmap k gk
