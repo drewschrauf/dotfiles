@@ -26,9 +26,11 @@ fresh-options --file=~/.zshrc --marker
 fresh-options
 
 fresh-options --file=~/.config/nvim/init.vim --marker='"'
-  fresh config/nvim/plugins
-  fresh config/nvim/base
+  fresh config/nvim/plugins.vim
+  fresh config/nvim/base.vim
+  fresh config/nvim/coc.vim
 fresh-options
+fresh config/nvim/coc-settings.json --file=~/.config/nvim/coc-settings.json
 
 fresh config/i3status --file=~/.i3status.conf
 fresh config/polybar --file=~/.config/polybar/config

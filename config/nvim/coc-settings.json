@@ -1,0 +1,22 @@
+{
+  "diagnostic.signOffset": 9999999,
+  "suggest.enablePreview": true,
+  "eslint.filetypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue"
+  ],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript", 
+    "javascriptreact", 
+    "typescript", 
+    "typescriptreact", 
+    "css", 
+    "json",
+    "vue"
+  ],
+  "prettier.requireConfig": true,
+  "prettier.disableLanguages": []
+}

@@ -7,7 +7,6 @@ color dracula
 let g:airline_theme='dracula'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#ale#enabled = 1
 
 let mapleader=" "
 set t_Co=256
@@ -30,6 +29,7 @@ set splitbelow
 set cursorline
 set colorcolumn=100
 set nobackup
+set nowritebackup
 set noswapfile
 set history=1000
 set undodir=$HOME/.vim-undo
@@ -110,15 +110,6 @@ map Q :qa<CR>
 "always wrap in vimdiff
 au VimEnter * if &diff | execute 'windo set wrap' | endif
 
-" Enable deoplete
-let g:deoplete#enable_at_startup = 1
-
-" Close deoplete preview after complete
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
-
 "Better start and end of line
 nmap <leader>i ^
 nmap <leader>a $
@@ -153,10 +144,6 @@ nmap s <Plug>(easymotion-overwin-f2)
 
 " Typescript settings
 let g:polyglot_disabled = ['typescript', 'jsx']
-autocmd FileType typescript,typescript.tsx nnoremap <buffer> <leader>ti :TSDef<cr>
-autocmd FileType typescript,typescript.tsx nnoremap <buffer> <leader>td :TSDoc<cr>
-autocmd FileType typescript,typescript.tsx nnoremap <buffer> <leader>tr :TSRefs<cr>
-autocmd FileType typescript,typescript.tsx nnoremap <buffer> <leader>tc :TSRename<cr>
 
 " don't move cursor on star search
 nnoremap * :keepjumps normal! mi*`i<CR>
@@ -175,3 +162,4 @@ nmap <leader>l :IndentLinesToggle<CR>
 " VIMRC editing
 nnoremap <leader>ve :vsplit $MYVIMRC<cr>
 nnoremap <leader>vs :source $MYVIMRC<cr>
+

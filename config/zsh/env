@@ -1,3 +1,5 @@
+export PATH=~/nvim/bin:$PATH
+
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=250"
 
 export EDITOR=nvim

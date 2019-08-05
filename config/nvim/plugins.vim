@@ -16,7 +16,6 @@ Plug 'wesQ3/vim-windowswap'
 Plug 'dyng/ctrlsf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'w0rp/ale'
 Plug 'edkolev/tmuxline.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
@@ -25,7 +24,7 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'Asheq/close-buffers.vim'
 
 "Editing
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'easymotion/vim-easymotion'
@@ -42,9 +41,7 @@ Plug 'fatih/vim-go'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 "Typescript
-Plug 'prettier/vim-prettier'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
 
 "Jsonnet
 Plug 'google/vim-jsonnet'
