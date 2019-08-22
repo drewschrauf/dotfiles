@@ -4,6 +4,6 @@
     "coc-json": ">=1.2.3",
     "coc-eslint": ">=1.2.1",
     "coc-prettier": ">=1.1.5",
-    "coc-vetur": ">=1.1.3"
+    "coc-vetur": ">=1.1.5"
   }
 }
