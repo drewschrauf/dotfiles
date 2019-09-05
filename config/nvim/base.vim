@@ -42,8 +42,8 @@ nmap k gk
 vmap j gj
 vmap k gk
 
-let NERDTreeRespectWildIgnore = 1
-map <leader>n :NERDTreeToggle<CR>
+" ranger
+map <leader>n :RangerWorkingDirectory<CR>
 
 "quickly exit insert mode
 imap jj <Esc>
@@ -96,9 +96,6 @@ nmap <C-B> <C-B>zz
 "fzf
 nmap <C-T> :Files<CR>
 nmap ; :Buffers<CR>
-
-"NERDTree find current buffer in tree
-nmap <leader>f :NERDTreeFind<cr>
 
 "Ag settings
 nnoremap \ :CtrlSF<SPACE>
