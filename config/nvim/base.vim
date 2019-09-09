@@ -100,6 +100,7 @@ nmap ; :Buffers<CR>
 "Ag settings
 nnoremap \ :CtrlSF<SPACE>
 let g:ctrlsf_position = 'right'
+let g:ctrlsf_ackprg = 'rg'
 
 "quick exit
 map Q :qa<CR>
@@ -140,7 +141,7 @@ let g:EasyMotion_smartcase = 1
 nmap s <Plug>(easymotion-overwin-f2)
 
 " Typescript settings
-let g:polyglot_disabled = ['typescript', 'jsx']
+let g:polyglot_disabled = ['jsx']
 
 " don't move cursor on star search
 nnoremap * :keepjumps normal! mi*`i<CR>

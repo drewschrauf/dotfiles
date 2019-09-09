@@ -38,10 +38,6 @@ Plug 'sheerun/vim-polyglot'
 
 "Go
 Plug 'fatih/vim-go'
-Plug 'zchee/deoplete-go', { 'do': 'make'}
-
-"Typescript
-Plug 'HerringtonDarkholme/yats.vim'
 
 "Jsonnet
 Plug 'google/vim-jsonnet'
