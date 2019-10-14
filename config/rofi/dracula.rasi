@@ -44,7 +44,7 @@ window {
 }
 
 mainbox {
-  children: [inputbar, message, sidebar, listview];
+  children: [inputbar, message, mode-switcher, listview];
   spacing: 16px;
   /*margin: 20%;*/
   padding: 16px 0;
@@ -76,7 +76,7 @@ case-indicator {
   text-color: #ff0000; /* TODO: What is this? */
 }
 
-sidebar, message {
+mode-switcher, message {
   border: 1px 0;
   border-color: #ff0; /* TODO: What is this? */
 }
