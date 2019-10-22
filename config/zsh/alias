@@ -4,4 +4,10 @@ alias ls='exa'
 alias cat='bat'
 alias gpp='git status | fpp'
 alias ltb="yarn lint && yarn test && yarn build"
-alias t='~/.dotfiles/bin/todo/todo.sh'
+
+# todo
+TODO='~/.dotfiles/bin/todo/todo.sh'
+alias t=$TODO
+alias ta="$TODO add"
+alias tw="$TODO ls +work"
+alias th="$TODO ls +home"
