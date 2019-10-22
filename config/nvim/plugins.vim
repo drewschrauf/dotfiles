@@ -22,6 +22,7 @@ Plug 'benmills/vimux'
 Plug 'wincent/terminus'
 Plug 'qpkorr/vim-bufkill'
 Plug 'Asheq/close-buffers.vim'
+Plug 'freitass/todo.txt-vim'
 
 "Editing
 Plug 'neoclide/coc.nvim', {'branch': 'release'}

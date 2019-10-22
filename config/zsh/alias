@@ -1,6 +1,7 @@
 alias n='nvim'
-alias t='tmux attach || tmux new'
+alias tm='tmux attach || tmux new'
 alias ls='exa'
 alias cat='bat'
 alias gpp='git status | fpp'
 alias ltb="yarn lint && yarn test && yarn build"
+alias t='~/.dotfiles/bin/todo/todo.sh'
