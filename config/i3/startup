@@ -5,5 +5,6 @@ exec --no-startup-id udiskie -s
 exec --no-startup-id compton
 exec --no-startup-id redshift
 exec --no-startup-id dunst
+exec --no-startup-id dropbox
 exec --no-startup-id gnome-keyring-daemon --start
 exec_always --no-startup-id feh --bg-scale ~/.dotfiles/wallpaper.png
