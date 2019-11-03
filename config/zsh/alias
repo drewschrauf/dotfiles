@@ -9,5 +9,6 @@ alias ltb="yarn lint && yarn test && yarn build"
 TODO='~/.dotfiles/bin/todo/todo.sh'
 alias t=$TODO
 alias ta="$TODO add"
+alias td="$TODO do"
 alias tw="$TODO ls +work"
 alias th="$TODO ls +home"
