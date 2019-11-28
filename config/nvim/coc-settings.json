@@ -5,8 +5,7 @@
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact",
-    "vue"
+    "typescriptreact"
   ],
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript", 
@@ -15,7 +14,6 @@
     "typescriptreact", 
     "css", 
     "json",
-    "vue",
     "haskell"
   ],
   "prettier.requireConfig": true,

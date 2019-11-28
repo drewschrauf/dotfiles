@@ -1,9 +1,8 @@
 {
   "dependencies": {
-    "coc-tsserver": ">=1.4.4",
-    "coc-json": ">=1.2.3",
     "coc-eslint": ">=1.2.2",
+    "coc-json": ">=1.2.3",
     "coc-prettier": ">=1.1.10",
-    "coc-vetur": ">=1.1.5"
+    "coc-tsserver": ">=1.4.8"
   }
 }
