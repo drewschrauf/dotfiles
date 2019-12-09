@@ -124,7 +124,7 @@ noremap <leader>s :update<CR>
 nmap <leader>d :BD<cr>
 
 "Make current buffer the only buffer
-nmap <leader>o :CloseHiddenBuffers<cr>
+nmap <leader>o :Bdelete hidden<cr>
 
 " comment alignment
 let g:NERDDefaultAlign = 'left'
