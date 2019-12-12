@@ -1,5 +1,8 @@
 source ~/.zplug/init.zsh
 
+# self
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+
 # oh-my-zsh
 zplug lib/history, from:oh-my-zsh
 zplug lib/completion, from:oh-my-zsh
