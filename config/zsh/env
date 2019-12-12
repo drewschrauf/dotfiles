@@ -1,4 +1,4 @@
-export PATH=~/.local/bin:$PATH
+export PATH=~/.local/bin:~/.yarn/bin:$PATH
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=250"
 
@@ -7,8 +7,5 @@ export EDITOR=nvim
 export FZF_TMUX=0
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
