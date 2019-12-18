@@ -18,6 +18,7 @@
   ],
   "prettier.requireConfig": true,
   "prettier.disableLanguages": [],
+  "prettier.disableSuccessMessage": true,
   "languageserver": {
     "haskell": {
       "command": "hie-wrapper",
