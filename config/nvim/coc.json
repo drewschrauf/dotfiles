@@ -3,6 +3,7 @@
     "coc-eslint": ">=1.2.3",
     "coc-json": ">=1.2.4",
     "coc-prettier": ">=1.1.11",
+    "coc-reason": ">=0.1.0",
     "coc-tsserver": ">=1.4.9"
   }
 }

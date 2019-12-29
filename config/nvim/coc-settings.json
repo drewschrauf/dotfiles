@@ -14,7 +14,8 @@
     "typescriptreact", 
     "css", 
     "json",
-    "haskell"
+    "haskell",
+    "reason"
   ],
   "prettier.requireConfig": true,
   "prettier.disableLanguages": [],
