@@ -20,7 +20,6 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
 Plug 'wincent/terminus'
-Plug 'qpkorr/vim-bufkill'
 Plug 'Asheq/close-buffers.vim'
 Plug 'dbeniamine/todo.txt-vim'
 
