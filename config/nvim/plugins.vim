@@ -1,14 +1,12 @@
 call plug#begin('~/.vim/plugged')
 
 "Theme
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'drewtempelmeyer/palenight.vim'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 "Environment
 Plug 'rbgrouleff/bclose.vim'
 Plug 'francoiscabrol/ranger.vim'
-Plug 'octref/RootIgnore'
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
@@ -34,12 +32,11 @@ Plug 'nelstrom/vim-visual-star-search'
 Plug 'Shougo/neosnippet.vim'
 
 "Languages
-Plug 'sheerun/vim-polyglot'
-
-"Go
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'pangloss/vim-javascript'
 Plug 'fatih/vim-go'
-
-"Jsonnet
-Plug 'google/vim-jsonnet'
+Plug 'plasticboy/vim-markdown'
+Plug 'stephpy/vim-yaml'
+Plug 'reasonml-editor/vim-reason-plus'
 
 call plug#end()

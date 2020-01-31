@@ -2,9 +2,9 @@ syntax on
 filetype plugin indent on
 
 set background=dark
-color dracula
+color palenight
 
-let g:airline_theme='dracula'
+let g:airline_theme='palenight'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
@@ -36,6 +36,7 @@ set undodir=$HOME/.vim-undo
 set viewdir=$HOME/.vim-views
 set hidden
 set inccommand=nosplit
+set termguicolors
 
 nmap j gj
 nmap k gk
@@ -96,6 +97,7 @@ nmap <C-B> <C-B>zz
 "fzf
 nmap <C-T> :Files<CR>
 nmap ; :Buffers<CR>
+let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow(0.5)' }
 
 "Ag settings
 nnoremap \ :CtrlSF<SPACE>
@@ -130,18 +132,12 @@ nmap <leader>o :Bdelete hidden<cr>
 let g:NERDDefaultAlign = 'left'
 let g:NERDSpaceDelims = 1
 
-" allow jsx syntax in .js files
-let g:jsx_ext_required = 0
-
 " No indent markers by default
 let g:indentLine_enabled = 0
 
 " Easymotion
 let g:EasyMotion_smartcase = 1
 nmap s <Plug>(easymotion-overwin-f2)
-
-" Typescript settings
-let g:polyglot_disabled = ['jsx']
 
 " don't move cursor on star search
 nnoremap * :keepjumps normal! mi*`i<CR>
@@ -164,9 +160,9 @@ nnoremap <leader>vs :source $MYVIMRC<cr>
 " Popup windows
 autocmd TermOpen term://* startinsert
 
-function! CreateCenteredFloatingWindow()
-  let width = float2nr(&columns * 0.8)
-  let height = float2nr(&lines * 0.8)
+function! CreateCenteredFloatingWindow(scale)
+  let width = float2nr(&columns * a:scale)
+  let height = float2nr(&lines * a:scale)
   let top = ((&lines - height) / 2) - 1
   let left = (&columns - width) / 2
   let opts = {'relative': 'editor', 'row': top, 'col': left, 'width': width, 'height': height, 'style': 'minimal'}
@@ -188,7 +184,7 @@ function! CreateCenteredFloatingWindow()
 endfunction
 
 function! OpenTerm(cmd)
-  call CreateCenteredFloatingWindow()
+  call CreateCenteredFloatingWindow(0.8)
   call termopen(a:cmd, { 'on_exit': function('OnTermExit') })
 endfunction
 
