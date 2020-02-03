@@ -37,6 +37,7 @@ set viewdir=$HOME/.vim-views
 set hidden
 set inccommand=nosplit
 set termguicolors
+set nofoldenable
 
 nmap j gj
 nmap k gk
