@@ -9,6 +9,9 @@ set-option -g mode-keys vi
 bind-key -r S-Left swap-window -t -1
 bind-key -r S-Right swap-window -t +1
 
+bind '"' split-window -c "#{pane_current_path}"
+bind % split-window -h -c "#{pane_current_path}"
+
 if '[ -f ~/.tmux.colors ]' 'source ~/.tmux.colors'
 
 set -g @plugin 'tmux-plugins/tpm'
