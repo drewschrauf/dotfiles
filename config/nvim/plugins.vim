@@ -38,5 +38,6 @@ Plug 'fatih/vim-go'
 Plug 'plasticboy/vim-markdown'
 Plug 'stephpy/vim-yaml'
 Plug 'reasonml-editor/vim-reason-plus'
+Plug 'kchmck/vim-coffee-script'
 
 call plug#end()

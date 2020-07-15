@@ -1,0 +1,7 @@
+# set up trackball
+my_mouse_id=$(xinput | grep "ELECOM" -m 1 | sed 's/^.*id=\([0-9]*\)[ \t].*$/\1/')
+xinput set-button-map $my_mouse_id 1 12 3 4 5 6 7 8 9 10 11 2
+
+imwheel --kill -b "4 5"
+killall xbindkeys || echo "xbindkeys not running"
+xbindkeys
