@@ -1,0 +1,8 @@
+"xdotool key 'Super_L+Ctrl+Down'"
+  b:8 + release
+
+"xdotool key 'Super_L+Ctrl+Up'"
+  b:9 + release
+
+"xdotool key 'Super_L'"
+  b:10 + release
