@@ -15,7 +15,8 @@
     "css", 
     "json",
     "haskell",
-    "reason"
+    "reason",
+    "rescript"
   ],
   "prettier.requireConfig": true,
   "prettier.disableLanguages": [],
@@ -39,6 +40,13 @@
           "hlintOn": true
         }
       }
-    }
+    },
+    "rescript": {
+      "enable": true,
+      "module": "~/.vim/plugged/vim-rescript/server/out/server.js",
+      "args": ["--node-ipc"],
+      "filetypes": ["rescript"],
+      "rootPatterns": ["bsconfig.json"]
+    } 
   }
 }
