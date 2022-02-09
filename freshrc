@@ -1,20 +1,6 @@
 fresh freshshell/fresh bin/fresh --bin
 fresh freshshell/fresh contrib/source-build.sh --file=~/.zshrc
 
-fresh config/xinit --file=~/.xinitrc
-fresh config/Xresources --file=~/.Xresources
-
-fresh-options --file=~/.config/i3/config --marker
-  fresh config/i3/colors
-  fresh config/i3/default
-  fresh config/i3/bar
-
-  fresh config/i3/modes/\*
-  fresh config/i3/keybindings/\*
-
-  fresh config/i3/startup
-fresh-options
-
 fresh-options --file=~/.zshrc --marker
   fresh config/zsh/plugin
   fresh config/zsh/env
@@ -32,19 +18,6 @@ fresh-options --file=~/.config/nvim/init.vim --marker='"'
 fresh-options
 fresh config/nvim/coc-settings.json --file=~/.config/nvim/coc-settings.json
 
-fresh config/i3status --file=~/.i3status.conf
-fresh config/polybar --file=~/.config/polybar/config
-fresh config/rofi/config --file=~/.config/rofi/config
-fresh config/rofi/dracula.rasi --file=~/.config/rofi/dracula.rasi
-fresh config/compton --file=~/.config/compton.conf
-fresh config/kitty --file=~/.config/kitty/kitty.conf
-fresh config/dunst --file=~/.config/dunst/dunstrc
-fresh config/ranger --file=~/.config/ranger/rc.conf
-fresh config/redshift --file=~/.config/redshift.conf
-
-fresh config/chunkwm --file=~/.chunkwmrc
-fresh config/skhdrc --file=~/.skhdrc
-
 fresh config/tmux --file=~/.tmux.conf
 fresh config/tmux.colors --file=~/.tmux.colors
 
@@ -54,3 +27,33 @@ fresh-options --file=~/.gitconfig
   fi
   fresh config/git/base
 fresh-options
+
+fresh config/ranger --file=~/.config/ranger/rc.conf
+
+if [[ -f linuxdesktop ]]; then
+  fresh config/xinit --file=~/.xinitrc
+  fresh config/Xresources --file=~/.Xresources
+
+  fresh-options --file=~/.config/i3/config --marker
+    fresh config/i3/colors
+    fresh config/i3/default
+    fresh config/i3/bar
+
+    fresh config/i3/modes/\*
+    fresh config/i3/keybindings/\*
+
+    fresh config/i3/startup
+  fresh-options
+
+  fresh config/i3status --file=~/.i3status.conf
+  fresh config/polybar --file=~/.config/polybar/config
+  fresh config/rofi/config --file=~/.config/rofi/config
+  fresh config/rofi/dracula.rasi --file=~/.config/rofi/dracula.rasi
+  fresh config/compton --file=~/.config/compton.conf
+  fresh config/kitty --file=~/.config/kitty/kitty.conf
+  fresh config/dunst --file=~/.config/dunst/dunstrc
+  fresh config/redshift --file=~/.config/redshift.conf
+
+  fresh config/chunkwm --file=~/.chunkwmrc
+  fresh config/skhdrc --file=~/.skhdrc
+fi
