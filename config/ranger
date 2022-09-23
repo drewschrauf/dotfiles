@@ -1,3 +1,4 @@
 set preview_images true
 set preview_images_method kitty
 set use_preview_script true
+set vcs_aware true

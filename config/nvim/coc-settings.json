@@ -25,13 +25,6 @@
   "prettier.disableSuccessMessage": true,
   "reason_language_server.autoRebuild": false,
   "languageserver": {
-    "rescript": {
-      "enable": true,
-      "module": "~/.vim/plugged/vim-rescript/rescript-vscode/extension/server/out/server.js",
-      "args": ["--node-ipc"],
-      "filetypes": ["rescript"],
-      "rootPatterns": ["bsconfig.json"]
-    },
     "haskell": {
       "command": "hie-wrapper",
       "rootPatterns": [
@@ -56,6 +49,13 @@
       "filetypes": ["gleam"],
       "rootPatterns": ["gleam.toml"],
       "trace.server": "verbose"
-    }
+    },
+    "rescript": {
+      "enable": true,
+      "module": "~/.vim/plugged/vim-rescript/server/out/server.js",
+      "args": ["--node-ipc"],
+      "filetypes": ["rescript"],
+      "rootPatterns": ["bsconfig.json"]
+    } 
   }
 }

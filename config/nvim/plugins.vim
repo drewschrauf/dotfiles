@@ -41,7 +41,13 @@ Plug 'stephpy/vim-yaml'
 Plug 'reasonml-editor/vim-reason-plus'
 Plug 'kchmck/vim-coffee-script'
 Plug 'rust-lang/rust.vim'
-Plug 'rescript-lang/vim-rescript'
 Plug 'gleam-lang/gleam.vim'
+Plug 'rescript-lang/vim-rescript'
+
+"Coc
+Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 
 call plug#end()
