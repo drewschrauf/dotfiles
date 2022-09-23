@@ -4,5 +4,5 @@
 "xdotool key 'Super_L+Ctrl+Up'"
   b:9 + release
 
-"xdotool key 'Super_L'"
+"xdotool key 'Super_L+d'"
   b:10 + release

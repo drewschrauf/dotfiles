@@ -1,4 +1,4 @@
-export PATH=~/.local/bin:~/.yarn/bin:$PATH
+export PATH=~/.local/bin:~/.yarn/bin:~/.cargo/bin:$PATH
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=250"
 
@@ -9,3 +9,13 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git" --glob "!esy.lock
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+. ~/.nix-profile/etc/profile.d/nix.sh
+eval "$(direnv hook zsh)"
+
+export HOMEBREW_PREFIX="/home/drew/.linuxbrew";
+export HOMEBREW_CELLAR="/home/drew/.linuxbrew/Cellar";
+export HOMEBREW_REPOSITORY="/home/drew/.linuxbrew/Homebrew";
+export PATH="/home/drew/.linuxbrew/bin:/home/drew/.linuxbrew/sbin${PATH+:$PATH}";
+export MANPATH="/home/drew/.linuxbrew/share/man${MANPATH+:$MANPATH}:";
+export INFOPATH="/home/drew/.linuxbrew/share/info:${INFOPATH:-}";

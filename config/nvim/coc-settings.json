@@ -15,13 +15,23 @@
     "css", 
     "json",
     "haskell",
-    "reason"
+    "reason",
+    "rust",
+    "rescript",
+    "gleam"
   ],
   "prettier.requireConfig": true,
   "prettier.disableLanguages": [],
   "prettier.disableSuccessMessage": true,
   "reason_language_server.autoRebuild": false,
   "languageserver": {
+    "rescript": {
+      "enable": true,
+      "module": "~/.vim/plugged/vim-rescript/rescript-vscode/extension/server/out/server.js",
+      "args": ["--node-ipc"],
+      "filetypes": ["rescript"],
+      "rootPatterns": ["bsconfig.json"]
+    },
     "haskell": {
       "command": "hie-wrapper",
       "rootPatterns": [
@@ -39,6 +49,13 @@
           "hlintOn": true
         }
       }
+    },
+    "gleam": {
+      "command": "gleam",
+      "args": ["lsp"],
+      "filetypes": ["gleam"],
+      "rootPatterns": ["gleam.toml"],
+      "trace.server": "verbose"
     }
   }
 }

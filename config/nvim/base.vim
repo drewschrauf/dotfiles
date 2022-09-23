@@ -98,7 +98,7 @@ nmap <C-B> <C-B>zz
 "fzf
 nmap <C-T> :Files<CR>
 nmap ; :Buffers<CR>
-let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow(0.5)' }
+let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow(0.8)' }
 
 "Ag settings
 nnoremap \ :CtrlSF<SPACE>

@@ -32,12 +32,16 @@ Plug 'nelstrom/vim-visual-star-search'
 Plug 'Shougo/neosnippet.vim'
 
 "Languages
-Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'HerringtonDarkholme/yats.vim'
+Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'fatih/vim-go'
 Plug 'plasticboy/vim-markdown'
 Plug 'stephpy/vim-yaml'
 Plug 'reasonml-editor/vim-reason-plus'
 Plug 'kchmck/vim-coffee-script'
+Plug 'rust-lang/rust.vim'
+Plug 'rescript-lang/vim-rescript'
+Plug 'gleam-lang/gleam.vim'
 
 call plug#end()
