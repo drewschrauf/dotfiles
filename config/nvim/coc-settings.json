@@ -1,6 +1,7 @@
 {
   "diagnostic.signOffset": 9999999,
   "suggest.enablePreview": true,
+  "suggest.noselect": true,
   "eslint.filetypes": [
     "javascript",
     "javascriptreact",
@@ -23,7 +24,6 @@
   "prettier.requireConfig": true,
   "prettier.disableLanguages": [],
   "prettier.disableSuccessMessage": true,
-  "reason_language_server.autoRebuild": false,
   "languageserver": {
     "haskell": {
       "command": "hie-wrapper",
