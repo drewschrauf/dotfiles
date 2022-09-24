@@ -10,9 +10,6 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git" --glob "!esy.lock
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
-. ~/.nix-profile/etc/profile.d/nix.sh
-eval "$(direnv hook zsh)"
-
 export HOMEBREW_PREFIX="/home/drew/.linuxbrew";
 export HOMEBREW_CELLAR="/home/drew/.linuxbrew/Cellar";
 export HOMEBREW_REPOSITORY="/home/drew/.linuxbrew/Homebrew";
