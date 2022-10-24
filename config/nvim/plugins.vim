@@ -31,8 +31,9 @@ Plug 'nelstrom/vim-visual-star-search'
 Plug 'Shougo/neosnippet.vim'
 
 "Languages
-" Plug 'HerringtonDarkholme/yats.vim'
-Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
 Plug 'fatih/vim-go'
 Plug 'plasticboy/vim-markdown'
