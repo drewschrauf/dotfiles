@@ -44,8 +44,9 @@ nmap k gk
 vmap j gj
 vmap k gk
 
-" ranger
-map <leader>n :RangerWorkingDirectory<CR>
+"nvim-tree
+map <leader>n :NvimTreeToggle<CR>
+map <leader>f :NvimTreeFindFile<CR>
 
 "quickly exit insert mode
 imap jj <Esc>
@@ -199,3 +200,15 @@ function! OpenLazyGit()
   call OpenTerm('lazygit')
 endfunction
 nnoremap <leader>g :call OpenLazyGit()<CR>
+
+lua << EOF
+-- disable netrw at the very start of your init.lua (strongly advised)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+
+-- empty setup using defaults
+require("nvim-tree").setup()
+EOF

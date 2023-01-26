@@ -4,15 +4,11 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=250"
 
 export EDITOR=nvim
 
+export NVM_AUTO_USE=true
+
 export FZF_TMUX=0
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git" --glob "!esy.lock"'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
-export HOMEBREW_PREFIX="/home/drew/.linuxbrew";
-export HOMEBREW_CELLAR="/home/drew/.linuxbrew/Cellar";
-export HOMEBREW_REPOSITORY="/home/drew/.linuxbrew/Homebrew";
-export PATH="/home/drew/.linuxbrew/bin:/home/drew/.linuxbrew/sbin${PATH+:$PATH}";
-export MANPATH="/home/drew/.linuxbrew/share/man${MANPATH+:$MANPATH}:";
-export INFOPATH="/home/drew/.linuxbrew/share/info:${INFOPATH:-}";

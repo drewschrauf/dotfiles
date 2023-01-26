@@ -6,7 +6,8 @@ Plug 'vim-airline/vim-airline'
 
 "Environment
 Plug 'rbgrouleff/bclose.vim'
-Plug 'francoiscabrol/ranger.vim'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-tree/nvim-tree.lua'
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
@@ -43,6 +44,7 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'rust-lang/rust.vim'
 Plug 'gleam-lang/gleam.vim'
 Plug 'rescript-lang/vim-rescript'
+Plug 'hashivim/vim-terraform'
 
 "Coc
 Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}

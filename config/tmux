@@ -5,6 +5,7 @@ set -g default-terminal "xterm-256color"
 set-option -g bell-action any
 set-option -g visual-bell off
 set-option -g mode-keys vi
+set-option -g escape-time 50
 
 bind-key -r S-Left swap-window -t -1
 bind-key -r S-Right swap-window -t +1
