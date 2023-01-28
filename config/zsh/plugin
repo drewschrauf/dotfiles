@@ -7,7 +7,6 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug lib/history, from:oh-my-zsh
 zplug lib/completion, from:oh-my-zsh
 zplug lib/theme-and-appearance, from:oh-my-zsh
-zplug plugins/vi-mode, from:oh-my-zsh
 zplug plugins/git, from:oh-my-zsh
 zplug plugins/npm, from:oh-my-zsh
 zplug plugins/yarn, from:oh-my-zsh
@@ -21,6 +20,8 @@ zplug MichaelAquilina/zsh-you-should-use
 zplug ael-code/zsh-colored-man-pages
 zplug zsh-users/zsh-autosuggestions
 zplug zsh-users/zsh-syntax-highlighting, defer:2
+
+export NVM_AUTO_USE=true
 zplug lukechilds/zsh-nvm
 
 # Pure theme

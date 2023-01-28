@@ -4,8 +4,6 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=250"
 
 export EDITOR=nvim
 
-export NVM_AUTO_USE=true
-
 export FZF_TMUX=0
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git" --glob "!esy.lock"'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
